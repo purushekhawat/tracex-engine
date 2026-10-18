@@ -18,6 +18,19 @@ import (
 func SetupRoutes(cfg *config.Config) http.Handler {
 	mux := http.NewServeMux()
 
+	// 0. Root Welcome & Discovery Handler
+	mux.HandleFunc("GET /{$}", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusOK)
+		_ = json.NewEncoder(w).Encode(map[string]interface{}{
+			"service":     "TRACE-X Backend API Engine",
+			"status":      "online",
+			"version":     "v1.0.0",
+			"health":      "/api/v1/health",
+			"description": "SIH 26182: Explainable Cross-Chain VASP Attribution & Investigation Platform",
+		})
+	})
+
 	// 1. Health Services
 	healthService := service.NewHealthService(cfg)
 	healthHandler := handler.NewHealthHandler(healthService)
