@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: tracex-backend
+    env: go
+    rootDir: backend
+    buildCommand: go build -o tracex-backend ./cmd/api
+    startCommand: ./tracex-backend
+    plan: free
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: PORT
+        value: 8080
+      - key: POSTGRES_USER
+        value: tracex
