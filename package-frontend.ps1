@@ -43,11 +43,12 @@ python -c "
 import os, zipfile
 fe_dir = r'$FrontendDir'
 source_zip = r'$SourceZip'
-exclude = {'node_modules', '.git'}
+exclude = {'node_modules', '.git', 'dist'}
 with zipfile.ZipFile(source_zip, 'w', zipfile.ZIP_DEFLATED) as z:
     for foldername, subfolders, filenames in os.walk(fe_dir):
         subfolders[:] = [d for d in subfolders if d not in exclude]
         for filename in filenames:
+            if filename.endswith('.zip'): continue
             fp = os.path.join(foldername, filename)
             z.write(fp, os.path.relpath(fp, r'$Root'))
 "
