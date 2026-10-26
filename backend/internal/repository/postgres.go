@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sih26182/tracex-backend/internal/connector"
-	"github.com/sih26182/tracex-backend/internal/model"
+	"github.com/tracex/tracex-backend/internal/connector"
+	"github.com/tracex/tracex-backend/internal/model"
 )
 
 type PostgresRepository interface {

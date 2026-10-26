@@ -8,9 +8,9 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/sih26182/tracex-backend/internal/connector"
-	"github.com/sih26182/tracex-backend/internal/model"
-	"github.com/sih26182/tracex-backend/internal/repository"
+	"github.com/tracex/tracex-backend/internal/connector"
+	"github.com/tracex/tracex-backend/internal/model"
+	"github.com/tracex/tracex-backend/internal/repository"
 )
 
 type InvestigationProgress struct {

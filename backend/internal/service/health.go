@@ -7,7 +7,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/sih26182/tracex-backend/internal/config"
+	"github.com/tracex/tracex-backend/internal/config"
 )
 
 type DependencyStatus struct {

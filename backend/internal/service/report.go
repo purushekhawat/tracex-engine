@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/sih26182/tracex-backend/pkg/attribution"
+	"github.com/tracex/tracex-backend/pkg/attribution"
 )
 
 type CaseInfo struct {

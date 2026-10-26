@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/sih26182/tracex-backend/internal/model"
+	"github.com/tracex/tracex-backend/internal/model"
 )
 
 func TestCrossChainResolverVerifiedEvent(t *testing.T) {

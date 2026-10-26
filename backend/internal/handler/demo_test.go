@@ -6,9 +6,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/sih26182/tracex-backend/internal/handler"
-	"github.com/sih26182/tracex-backend/internal/repository"
-	"github.com/sih26182/tracex-backend/internal/service"
+	"github.com/tracex/tracex-backend/internal/handler"
+	"github.com/tracex/tracex-backend/internal/repository"
+	"github.com/tracex/tracex-backend/internal/service"
 )
 
 func TestDemoHandler_LoadInvestmentFraud(t *testing.T) {

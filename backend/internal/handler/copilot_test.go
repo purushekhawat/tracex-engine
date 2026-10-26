@@ -8,10 +8,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/sih26182/tracex-backend/internal/connector"
-	"github.com/sih26182/tracex-backend/internal/repository"
-	"github.com/sih26182/tracex-backend/internal/service"
-	"github.com/sih26182/tracex-backend/pkg/attribution"
+	"github.com/tracex/tracex-backend/internal/connector"
+	"github.com/tracex/tracex-backend/internal/repository"
+	"github.com/tracex/tracex-backend/internal/service"
+	"github.com/tracex/tracex-backend/pkg/attribution"
 )
 
 func setupTestCopilotHandler() *CopilotHandler {

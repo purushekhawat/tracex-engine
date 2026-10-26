@@ -7,7 +7,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/sih26182/tracex-backend/pkg/auth"
+	"github.com/tracex/tracex-backend/pkg/auth"
 )
 
 func TestAuthHandler_LoginAndTokenValidation(t *testing.T) {

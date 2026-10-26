@@ -84,12 +84,12 @@ export const StartInvestigationModal: React.FC<StartInvestigationModalProps> = (
 
         <div className="space-y-1">
           <div className="flex items-center gap-2">
-            <span className="px-2.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200 text-xs font-mono font-bold">
+            <span className="px-2.5 py-0.5 rounded bg-[#fbf7f1] text-[#9a7547] border border-[#9a7547]/30 text-xs font-mono font-bold">
               MULTI-HOP GRAPH INGESTION
             </span>
           </div>
           <h2 className="text-xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
-            <Network className="h-5 w-5 text-blue-600" /> Start New Multi-Hop Investigation
+            <Network className="h-5 w-5 text-[#9a7547]" /> Start New Multi-Hop Investigation
           </h2>
           <p className="text-xs text-slate-500">
             Enter suspect wallet address, select target blockchain, and specify traversal hop depth.
@@ -110,7 +110,7 @@ export const StartInvestigationModal: React.FC<StartInvestigationModalProps> = (
                       setSuspectWallet(chip.wallet);
                       setBlockchain(chip.chain);
                     }}
-                    className="px-2.5 py-1 rounded bg-slate-50 hover:bg-blue-50 border border-slate-200 text-blue-600 font-mono text-[10px] text-left transition"
+                    className="px-2.5 py-1 rounded bg-slate-50 hover:bg-[#fbf7f1] border border-slate-200 text-[#9a7547] font-mono text-[10px] text-left transition"
                   >
                     {chip.label}
                   </button>
@@ -121,14 +121,14 @@ export const StartInvestigationModal: React.FC<StartInvestigationModalProps> = (
             {/* Suspect Wallet Input */}
             <div className="space-y-1.5">
               <label className="text-xs font-mono text-slate-700 font-semibold uppercase flex items-center gap-1">
-                <ShieldAlert className="h-3.5 w-3.5 text-rose-500" /> Suspect Wallet Address
+                <ShieldAlert className="h-3.5 w-3.5 text-[#9a7547]" /> Suspect Wallet Address
               </label>
               <input
                 type="text"
                 value={suspectWallet}
                 onChange={(e) => setSuspectWallet(e.target.value)}
                 placeholder="0x... or T..."
-                className="w-full bg-slate-50 border border-slate-200 focus:border-blue-500 focus:bg-white rounded-lg px-3.5 py-2 text-xs font-mono text-slate-800 placeholder-slate-400 focus:outline-none"
+                className="w-full bg-slate-50 border border-slate-200 focus:border-[#9a7547] focus:bg-white rounded-lg px-3.5 py-2 text-xs font-mono text-slate-800 placeholder-slate-400 focus:outline-none"
                 required
               />
             </div>
@@ -140,7 +140,7 @@ export const StartInvestigationModal: React.FC<StartInvestigationModalProps> = (
                 <select
                   value={blockchain}
                   onChange={(e) => setBlockchain(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 focus:border-blue-500 focus:bg-white rounded-lg px-3 py-2 text-xs font-mono text-slate-800 focus:outline-none"
+                  className="w-full bg-slate-50 border border-slate-200 focus:border-[#9a7547] focus:bg-white rounded-lg px-3 py-2 text-xs font-mono text-slate-800 focus:outline-none"
                 >
                   <option value="ethereum">Ethereum (EVM)</option>
                   <option value="tron">TRON (TRC-20)</option>
@@ -158,7 +158,7 @@ export const StartInvestigationModal: React.FC<StartInvestigationModalProps> = (
                   max="5"
                   value={maxHops}
                   onChange={(e) => setMaxHops(parseInt(e.target.value))}
-                  className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 mt-3"
+                  className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#9a7547] mt-3"
                 />
               </div>
             </div>
@@ -174,7 +174,7 @@ export const StartInvestigationModal: React.FC<StartInvestigationModalProps> = (
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-medium text-xs transition shadow-lg shadow-blue-500/20 disabled:opacity-50"
+                className="inline-flex items-center gap-2 px-5 py-2 rounded-lg bg-[#9a7547] hover:bg-[#83633c] text-white font-medium text-xs transition shadow-lg shadow-blue-500/20 disabled:opacity-50"
               >
                 {isSubmitting ? (
                   <>
@@ -192,10 +192,10 @@ export const StartInvestigationModal: React.FC<StartInvestigationModalProps> = (
           /* Live Progress View */
           <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-4">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-mono font-bold text-blue-600 flex items-center gap-2">
-                <RefreshCw className="h-4 w-4 animate-spin text-blue-600" /> Pipeline Status: {progress?.status || 'RUNNING'}
+              <span className="text-xs font-mono font-bold text-[#9a7547] flex items-center gap-2">
+                <RefreshCw className="h-4 w-4 animate-spin text-[#9a7547]" /> Pipeline Status: {progress?.status || 'RUNNING'}
               </span>
-              <span className="text-xs font-mono text-emerald-600 font-bold">
+              <span className="text-xs font-mono text-[#9a7547] font-bold">
                 {progress?.progress_percent ? progress.progress_percent.toFixed(0) : 10}%
               </span>
             </div>
@@ -203,19 +203,19 @@ export const StartInvestigationModal: React.FC<StartInvestigationModalProps> = (
             {/* Progress Bar */}
             <div className="w-full h-3 rounded-full bg-slate-200 overflow-hidden border border-slate-300">
               <div
-                className="h-full bg-gradient-to-r from-blue-600 to-cyan-500 transition-all duration-300"
+                className="h-full bg-[#9a7547] transition-all duration-300"
                 style={{ width: `${progress?.progress_percent || 15}%` }}
               />
             </div>
 
             <div className="p-3 rounded bg-white border border-slate-200 text-xs font-mono text-slate-700 space-y-1">
-              <div>Hop Level: <span className="text-blue-600 font-bold">{progress?.current_hop || 1} / {progress?.max_hops || maxHops}</span></div>
+              <div>Hop Level: <span className="text-[#9a7547] font-bold">{progress?.current_hop || 1} / {progress?.max_hops || maxHops}</span></div>
               <div>Message: <span className="text-slate-500">{progress?.message || 'Processing multi-hop graph nodes...'}</span></div>
             </div>
 
             {progress?.status === 'COMPLETED' && (
-              <div className="flex items-center justify-center gap-2 text-xs font-mono text-emerald-600 font-bold animate-pulse pt-2">
-                <CheckCircle2 className="h-4 w-4 text-emerald-600" /> Ingestion Completed! Redirecting to Cytoscape Visualizer...
+              <div className="flex items-center justify-center gap-2 text-xs font-mono text-[#9a7547] font-bold animate-pulse pt-2">
+                <CheckCircle2 className="h-4 w-4 text-[#9a7547]" /> Ingestion Completed! Redirecting to Cytoscape Visualizer...
               </div>
             )}
           </div>

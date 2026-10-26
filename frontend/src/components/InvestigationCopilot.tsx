@@ -78,9 +78,9 @@ export const InvestigationCopilot: React.FC<InvestigationCopilotProps> = ({ inve
               return (
                 <span
                   key={idx}
-                  className="mx-1 inline-flex items-center gap-1 px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/40 text-[10px] font-mono font-bold shadow-sm"
+                  className="mx-1 inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#fbf7f1] text-[#9a7547] border border-[#9a7547]/40 text-[10px] font-mono font-bold shadow-sm"
                 >
-                  <BookOpen className="h-3 w-3 text-blue-400" />
+                  <BookOpen className="h-3 w-3 text-[#9a7547]" />
                   {part.replace('[', '').replace(']', '')}
                 </span>
               );
@@ -93,12 +93,12 @@ export const InvestigationCopilot: React.FC<InvestigationCopilotProps> = ({ inve
         {citations && citations.length > 0 && (
           <div className="pt-2 border-t border-slate-200 space-y-1.5">
             <span className="text-[10px] font-mono font-bold text-slate-500 uppercase flex items-center gap-1">
-              <CheckCircle2 className="h-3 w-3 text-emerald-600" /> Grounded Evidence Citations ({citations.length}):
+              <CheckCircle2 className="h-3 w-3 text-[#9a7547]" /> Grounded Evidence Citations ({citations.length}):
             </span>
             <div className="grid grid-cols-1 gap-1.5 font-mono text-[11px]">
               {citations.map((c, cIdx) => (
                 <div key={cIdx} className="p-2 rounded bg-slate-50 border border-slate-200 flex items-start gap-2">
-                  <span className="px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200 text-[9px]">
+                  <span className="px-1.5 py-0.5 rounded bg-[#fbf7f1] text-[#9a7547] border border-[#9a7547]/30 text-[9px]">
                     {c.type}
                   </span>
                   <div className="truncate">
@@ -118,13 +118,13 @@ export const InvestigationCopilot: React.FC<InvestigationCopilotProps> = ({ inve
       {/* Copilot Header */}
       <div className="p-4 border-b border-slate-100 bg-white flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="p-2 rounded-xl bg-blue-50 border border-blue-200 text-blue-600">
+          <div className="p-2 rounded-xl bg-[#fbf7f1] border border-[#9a7547]/30 text-[#9a7547]">
             <Bot className="h-5 w-5" />
           </div>
           <div>
             <div className="flex items-center gap-2">
               <h3 className="text-sm font-bold text-slate-900 tracking-wide">TRACE-X Investigation Copilot</h3>
-              <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-mono font-medium">
+              <span className="px-2 py-0.5 rounded bg-[#fbf7f1] text-[#9a7547] border border-[#9a7547]/30 text-[10px] font-mono font-medium">
                 GROUNDED RAG ENGINE
               </span>
             </div>
@@ -135,7 +135,7 @@ export const InvestigationCopilot: React.FC<InvestigationCopilotProps> = ({ inve
         </div>
 
         <div className="hidden sm:flex items-center gap-1.5 text-[11px] text-slate-500 font-mono bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200">
-          <Info className="h-3.5 w-3.5 text-blue-600" /> Grounded Proof Integrity Guaranteed
+          <Info className="h-3.5 w-3.5 text-[#9a7547]" /> Grounded Proof Integrity Guaranteed
         </div>
       </div>
 
@@ -147,9 +147,9 @@ export const InvestigationCopilot: React.FC<InvestigationCopilotProps> = ({ inve
             key={pIdx}
             onClick={() => handleSendQuery(pq)}
             disabled={loading}
-            className="px-3 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 hover:bg-blue-50 transition shrink-0 font-mono text-[11px] flex items-center gap-1.5 shadow-xs"
+            className="px-3 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:text-[#9a7547] hover:border-[#9a7547]/30 hover:bg-[#fbf7f1] transition shrink-0 font-mono text-[11px] flex items-center gap-1.5 shadow-xs"
           >
-            <Sparkles className="h-3 w-3 text-blue-600" />
+            <Sparkles className="h-3 w-3 text-[#9a7547]" />
             {pq}
           </button>
         ))}
@@ -160,7 +160,7 @@ export const InvestigationCopilot: React.FC<InvestigationCopilotProps> = ({ inve
         {messages.map((msg, idx) => (
           <div key={idx} className={`flex items-start gap-3 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
             {msg.role === 'assistant' && (
-              <div className="p-2 rounded-lg bg-blue-50 text-blue-600 border border-blue-200 shrink-0 mt-1">
+              <div className="p-2 rounded-lg bg-[#fbf7f1] text-[#9a7547] border border-[#9a7547]/30 shrink-0 mt-1">
                 <Bot className="h-4 w-4" />
               </div>
             )}
@@ -168,17 +168,17 @@ export const InvestigationCopilot: React.FC<InvestigationCopilotProps> = ({ inve
             <div
               className={`max-w-[85%] rounded-2xl p-4 text-xs ${
                 msg.role === 'user'
-                  ? 'bg-blue-600 text-white rounded-tr-none shadow-sm font-medium'
+                  ? 'bg-[#9a7547] text-white rounded-tr-none shadow-sm font-medium'
                   : msg.content.includes('Insufficient evidence')
-                  ? 'bg-amber-50 border border-amber-200 text-amber-900 rounded-tl-none space-y-2'
+                  ? 'bg-[#fbf7f1] border border-[#9a7547]/30 text-slate-800 rounded-tl-none space-y-2'
                   : 'bg-white border border-slate-200 text-slate-800 rounded-tl-none space-y-3 shadow-xs'
               }`}
             >
               {msg.role === 'user' ? (
                 <div>{msg.content}</div>
               ) : msg.content.includes('Insufficient evidence') ? (
-                <div className="flex items-center gap-2 font-mono text-xs font-bold text-amber-700">
-                  <AlertCircle className="h-4 w-4 shrink-0 text-amber-600" />
+                <div className="flex items-center gap-2 font-mono text-xs font-bold text-[#9a7547]">
+                  <AlertCircle className="h-4 w-4 shrink-0 text-[#9a7547]" />
                   <span>Insufficient evidence to establish this.</span>
                 </div>
               ) : (
@@ -196,11 +196,11 @@ export const InvestigationCopilot: React.FC<InvestigationCopilotProps> = ({ inve
 
         {loading && (
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-blue-50 text-blue-600 border border-blue-200">
+            <div className="p-2 rounded-lg bg-[#fbf7f1] text-[#9a7547] border border-[#9a7547]/30">
               <Bot className="h-4 w-4" />
             </div>
             <div className="p-3 rounded-2xl bg-white border border-slate-200 text-xs font-mono text-slate-500 flex items-center gap-2 animate-pulse shadow-xs">
-              <RefreshCw className="h-3.5 w-3.5 animate-spin text-blue-600" /> Retrieving grounded evidence from investigation graph...
+              <RefreshCw className="h-3.5 w-3.5 animate-spin text-[#9a7547]" /> Retrieving grounded evidence from investigation graph...
             </div>
           </div>
         )}
@@ -221,13 +221,13 @@ export const InvestigationCopilot: React.FC<InvestigationCopilotProps> = ({ inve
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               placeholder="Ask Copilot (e.g. Trace funds, show VASP addresses, explain score...)"
-              className="w-full bg-slate-50 border border-slate-200 focus:bg-white rounded-xl px-4 py-3 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 font-mono"
+              className="w-full bg-slate-50 border border-slate-200 focus:bg-white rounded-xl px-4 py-3 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#9a7547] font-mono"
             />
           </div>
           <button
             type="submit"
             disabled={!inputValue.trim() || loading}
-            className="px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white font-mono text-xs font-bold transition flex items-center gap-2 shadow-sm shrink-0"
+            className="px-5 py-3 rounded-xl bg-[#9a7547] hover:bg-[#83633c] disabled:opacity-50 text-white font-mono text-xs font-bold transition flex items-center gap-2 shadow-sm shrink-0"
           >
             <Send className="h-4 w-4" />
             <span>Ask</span>

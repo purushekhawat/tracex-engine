@@ -15,7 +15,6 @@ import {
   RotateCcw,
   Binary,
 } from 'lucide-react';
-import { DemoBadge } from '../components/DemoBadge';
 
 export const MLAlgorithmResearch: React.FC = () => {
   // Interactive PoAE Score Simulator State
@@ -87,10 +86,10 @@ export const MLAlgorithmResearch: React.FC = () => {
   let badgeColor = 'bg-slate-100 text-slate-700 border-slate-300';
   if (finalScore >= 80) {
     classification = 'STRONG_ASSOCIATION';
-    badgeColor = 'bg-emerald-50 text-emerald-700 border-emerald-300';
+    badgeColor = 'bg-[#fbf7f1] text-[#9a7547] border-[#9a7547]/30';
   } else if (finalScore >= 50) {
     classification = 'INFERRED_ASSOCIATION';
-    badgeColor = 'bg-amber-50 text-amber-700 border-amber-300';
+    badgeColor = 'bg-slate-50 text-slate-700 border-slate-200';
   }
 
   const resetSimulator = () => {
@@ -113,13 +112,10 @@ export const MLAlgorithmResearch: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono font-medium">
-                <Brain className="h-3.5 w-3.5 text-blue-600" /> Research & Technical Architecture
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fbf7f1] border border-[#9a7547]/30 text-[#9a7547] text-xs font-mono font-medium">
+                <Brain className="h-3.5 w-3.5 text-[#9a7547]" /> Research & Technical Architecture
               </span>
-              <span className="px-2.5 py-0.5 rounded bg-purple-50 text-purple-700 border border-purple-200 text-xs font-mono font-medium">
-                SIH 26182
-              </span>
-              <DemoBadge />
+
             </div>
             <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
               Machine Learning & Graph Analytics Algorithm Specification
@@ -141,7 +137,7 @@ export const MLAlgorithmResearch: React.FC = () => {
         <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm space-y-1">
           <div className="flex items-center justify-between text-slate-400">
             <span className="text-[11px] font-mono uppercase">Primary Engine</span>
-            <Scale className="h-4 w-4 text-blue-500" />
+            <Scale className="h-4 w-4 text-[#9a7547]" />
           </div>
           <div className="text-base font-bold text-slate-800">PoAE v2.4</div>
           <div className="text-xs text-slate-500">8-Factor Explainable Scoring</div>
@@ -149,7 +145,7 @@ export const MLAlgorithmResearch: React.FC = () => {
         <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm space-y-1">
           <div className="flex items-center justify-between text-slate-400">
             <span className="text-[11px] font-mono uppercase">Graph Subsystem</span>
-            <Network className="h-4 w-4 text-cyan-500" />
+            <Network className="h-4 w-4 text-[#9a7547]" />
           </div>
           <div className="text-base font-bold text-slate-800">NetworkX & Neo4j</div>
           <div className="text-xs text-slate-500">Multi-Hop Path Traversal & Centrality</div>
@@ -157,7 +153,7 @@ export const MLAlgorithmResearch: React.FC = () => {
         <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm space-y-1">
           <div className="flex items-center justify-between text-slate-400">
             <span className="text-[11px] font-mono uppercase">Typology Detector</span>
-            <AlertTriangle className="h-4 w-4 text-amber-500" />
+            <AlertTriangle className="h-4 w-4 text-[#9a7547]" />
           </div>
           <div className="text-base font-bold text-slate-800">5 ML Typologies</div>
           <div className="text-xs text-slate-500">Peel Chains, Structuring, Velocity</div>
@@ -165,7 +161,7 @@ export const MLAlgorithmResearch: React.FC = () => {
         <div className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm space-y-1">
           <div className="flex items-center justify-between text-slate-400">
             <span className="text-[11px] font-mono uppercase">Evidence Standard</span>
-            <ShieldCheck className="h-4 w-4 text-emerald-500" />
+            <ShieldCheck className="h-4 w-4 text-[#9a7547]" />
           </div>
           <div className="text-base font-bold text-slate-800">Tri-State Segregation</div>
           <div className="text-xs text-slate-500">Facts vs Inferences vs Unknowns</div>
@@ -174,7 +170,7 @@ export const MLAlgorithmResearch: React.FC = () => {
 
       {/* Section 1: Problem Formulation & Graph Theory */}
       <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm space-y-4">
-        <div className="flex items-center gap-2 text-blue-600 font-mono text-xs font-semibold uppercase tracking-wider">
+        <div className="flex items-center gap-2 text-[#9a7547] font-mono text-xs font-semibold uppercase tracking-wider">
           <Binary className="h-4 w-4" /> Section 1. Mathematical Formulation & Blockchain Graph Model
         </div>
         <h2 className="text-xl font-bold text-slate-900">
@@ -191,7 +187,7 @@ export const MLAlgorithmResearch: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
           <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
             <span className="text-xs font-bold font-mono text-slate-800 uppercase flex items-center gap-1.5">
-              <Cpu className="h-4 w-4 text-blue-500" /> Vertex Attribute Mapping (&Phi;_V)
+              <Cpu className="h-4 w-4 text-[#9a7547]" /> Vertex Attribute Mapping (&Phi;_V)
             </span>
             <ul className="text-xs text-slate-600 space-y-1.5 font-mono list-disc list-inside">
               <li><strong className="text-slate-800">Address Identifier (v &isin; V):</strong> Hex string or Base58 address</li>
@@ -202,7 +198,7 @@ export const MLAlgorithmResearch: React.FC = () => {
           </div>
           <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
             <span className="text-xs font-bold font-mono text-slate-800 uppercase flex items-center gap-1.5">
-              <GitFork className="h-4 w-4 text-cyan-500" /> Edge Attribute Mapping (&Phi;_E)
+              <GitFork className="h-4 w-4 text-[#9a7547]" /> Edge Attribute Mapping (&Phi;_E)
             </span>
             <ul className="text-xs text-slate-600 space-y-1.5 font-mono list-disc list-inside">
               <li><strong className="text-slate-800">Transfer Vector (e = (u, v)):</strong> Source u to destination v</li>
@@ -216,7 +212,7 @@ export const MLAlgorithmResearch: React.FC = () => {
 
       {/* Section 2: Proof-of-Attribution Engine (PoAE) Formula */}
       <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm space-y-5">
-        <div className="flex items-center gap-2 text-blue-600 font-mono text-xs font-semibold uppercase tracking-wider">
+        <div className="flex items-center gap-2 text-[#9a7547] font-mono text-xs font-semibold uppercase tracking-wider">
           <Scale className="h-4 w-4" /> Section 2. Proof-of-Attribution Engine (PoAE) Multi-Factor Formulation
         </div>
         <h2 className="text-xl font-bold text-slate-900">
@@ -228,7 +224,7 @@ export const MLAlgorithmResearch: React.FC = () => {
 
         {/* Formula Display Box */}
         <div className="p-5 rounded-xl bg-slate-900 text-slate-100 font-mono text-sm shadow-inner space-y-3">
-          <div className="text-center py-2 text-base font-semibold tracking-wide text-blue-400">
+          <div className="text-center py-2 text-base font-semibold tracking-wide text-[#9a7547]">
             {'S = min(100, max(0, ∑(W_i · F_i) - P_ambiguity))'}
           </div>
           <div className="border-t border-slate-800 pt-3 text-xs text-slate-400 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
@@ -254,115 +250,115 @@ export const MLAlgorithmResearch: React.FC = () => {
               <span className="text-slate-200 font-bold">7. Cross-Chain Link:</span> W₇ = 10 pts
             </div>
             <div>
-              <span className="text-rose-400 font-bold">8. Ambiguity Penalty:</span> P &le; 25 pts
+              <span className="text-slate-700 font-bold">8. Ambiguity Penalty:</span> P &le; 25 pts
             </div>
           </div>
         </div>
 
         {/* Comprehensive Feature Breakdown Table */}
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs border border-slate-200 rounded-lg overflow-hidden">
-            <thead className="bg-slate-50 border-b border-slate-200 font-mono text-slate-700">
-              <tr>
-                <th className="p-3">Feature (F_i)</th>
-                <th className="p-3">Weight (W_i)</th>
-                <th className="p-3">Mathematical Definition & Decay Function</th>
-                <th className="p-3">Evidentiary Classification</th>
+        <div className="overflow-x-auto relative z-10 border-t border-slate-100">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="border-none bg-white">
+                <th className="py-4 pl-6 pr-3 text-xs font-semibold text-slate-700 whitespace-nowrap bg-white border-none">Feature (F_i)</th>
+                <th className="py-4 px-3.5 text-xs font-semibold text-slate-700 whitespace-nowrap bg-white border-none">Weight (W_i)</th>
+                <th className="py-4 px-3.5 text-xs font-semibold text-slate-700 whitespace-nowrap bg-white border-none">Mathematical Definition &amp; Decay Function</th>
+                <th className="py-4 pl-3.5 pr-6 text-xs font-semibold text-slate-700 whitespace-nowrap bg-white border-none">Evidentiary Classification</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-200 font-sans text-slate-600">
-              <tr>
-                <td className="p-3 font-semibold text-slate-900 font-mono">1. Address Label Strength</td>
-                <td className="p-3 font-mono font-bold text-blue-600">30 pts</td>
-                <td className="p-3">
+            <tbody className="divide-y-2 divide-slate-200/60 bg-white">
+              <tr className="hover:bg-slate-50/60 transition-colors">
+                <td className="py-4 pl-6 pr-3 font-bold text-slate-900 text-xs border-none">1. Address Label Strength</td>
+                <td className="py-4 px-3.5 font-bold text-[#9a7547] text-xs border-none">30 pts</td>
+                <td className="py-4 px-3.5 text-xs text-slate-700 font-medium border-none">
                   Direct match against verified intelligence DB: Verified hot wallet = 30 pts, Strong association = 20 pts, Heuristic inferred = 10 pts.
                 </td>
-                <td className="p-3">
-                  <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-mono">
+                <td className="py-4 pl-3.5 pr-6 whitespace-nowrap border-none">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#d1fae5] text-[#065f46] text-xs font-bold">
                     FACT (Verified)
                   </span>
                 </td>
               </tr>
-              <tr>
-                <td className="p-3 font-semibold text-slate-900 font-mono">2. Hop Distance Decay</td>
-                <td className="p-3 font-mono font-bold text-blue-600">20 pts</td>
-                <td className="p-3">
+              <tr className="hover:bg-slate-50/60 transition-colors">
+                <td className="py-4 pl-6 pr-3 font-bold text-slate-900 text-xs border-none">2. Hop Distance Decay</td>
+                <td className="py-4 px-3.5 font-bold text-[#9a7547] text-xs border-none">20 pts</td>
+                <td className="py-4 px-3.5 text-xs text-slate-700 font-medium border-none">
                   {'Step decay: H=1 → 20 pts, H=2 → 15 pts, H=3 → 10 pts, H=4 → 5 pts, H > 4 → 0 pts.'}
                 </td>
-                <td className="p-3">
-                  <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-mono">
+                <td className="py-4 pl-3.5 pr-6 whitespace-nowrap border-none">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#d1fae5] text-[#065f46] text-xs font-bold">
                     FACT (Ledger Graph)
                   </span>
                 </td>
               </tr>
-              <tr>
-                <td className="p-3 font-semibold text-slate-900 font-mono">3. Value Flow Retention Ratio</td>
-                <td className="p-3 font-mono font-bold text-blue-600">20 pts</td>
-                <td className="p-3">
+              <tr className="hover:bg-slate-50/60 transition-colors">
+                <td className="py-4 pl-6 pr-3 font-bold text-slate-900 text-xs border-none">3. Value Flow Retention Ratio</td>
+                <td className="py-4 px-3.5 font-bold text-[#9a7547] text-xs border-none">20 pts</td>
+                <td className="py-4 px-3.5 text-xs text-slate-700 font-medium border-none">
                   {'R = min(1.0, V_target / V_initial) × 20. Evaluates proportion of suspect wallet volume preserved without diversion.'}
                 </td>
-                <td className="p-3">
-                  <span className="px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200 text-[10px] font-mono">
+                <td className="py-4 pl-3.5 pr-6 whitespace-nowrap border-none">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#fef3c7] text-[#b45309] text-xs font-bold">
                     INFERENCE (Flow Metric)
                   </span>
                 </td>
               </tr>
-              <tr>
-                <td className="p-3 font-semibold text-slate-900 font-mono">4. Temporal Velocity Decay</td>
-                <td className="p-3 font-mono font-bold text-blue-600">15 pts</td>
-                <td className="p-3">
+              <tr className="hover:bg-slate-50/60 transition-colors">
+                <td className="py-4 pl-6 pr-3 font-bold text-slate-900 text-xs border-none">4. Temporal Velocity Decay</td>
+                <td className="py-4 px-3.5 font-bold text-[#9a7547] text-xs border-none">15 pts</td>
+                <td className="py-4 px-3.5 text-xs text-slate-700 font-medium border-none">
                   {'ΔT = t_end - t_start. ΔT ≤ 24h → 15 pts, ≤ 48h → 10 pts, ≤ 7d → 5 pts, > 7d → 0 pts.'}
                 </td>
-                <td className="p-3">
-                  <span className="px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200 text-[10px] font-mono">
+                <td className="py-4 pl-3.5 pr-6 whitespace-nowrap border-none">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#fef3c7] text-[#b45309] text-xs font-bold">
                     INFERENCE (Velocity)
                   </span>
                 </td>
               </tr>
-              <tr>
-                <td className="p-3 font-semibold text-slate-900 font-mono">5. Transaction Recurrence</td>
-                <td className="p-3 font-mono font-bold text-blue-600">10 pts</td>
-                <td className="p-3">
+              <tr className="hover:bg-slate-50/60 transition-colors">
+                <td className="py-4 pl-6 pr-3 font-bold text-slate-900 text-xs border-none">5. Transaction Recurrence</td>
+                <td className="py-4 px-3.5 font-bold text-[#9a7547] text-xs border-none">10 pts</td>
+                <td className="py-4 px-3.5 text-xs text-slate-700 font-medium border-none">
                   {'Frequency of historical transfers. Recurring transactions (N > 1) → 10 pts, single transfer → 5 pts.'}
                 </td>
-                <td className="p-3">
-                  <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-mono">
+                <td className="py-4 pl-3.5 pr-6 whitespace-nowrap border-none">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#d1fae5] text-[#065f46] text-xs font-bold">
                     FACT (Ledger History)
                   </span>
                 </td>
               </tr>
-              <tr>
-                <td className="p-3 font-semibold text-slate-900 font-mono">6. Co-Spending Cluster Identity</td>
-                <td className="p-3 font-mono font-bold text-blue-600">10 pts</td>
-                <td className="p-3">
+              <tr className="hover:bg-slate-50/60 transition-colors">
+                <td className="py-4 pl-6 pr-3 font-bold text-slate-900 text-xs border-none">6. Co-Spending Cluster Identity</td>
+                <td className="py-4 px-3.5 font-bold text-[#9a7547] text-xs border-none">10 pts</td>
+                <td className="py-4 px-3.5 text-xs text-slate-700 font-medium border-none">
                   Multi-input / deposit address sweep aggregation heuristics matching target entity pool cluster.
                 </td>
-                <td className="p-3">
-                  <span className="px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-200 text-[10px] font-mono">
+                <td className="py-4 pl-3.5 pr-6 whitespace-nowrap border-none">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#fef3c7] text-[#b45309] text-xs font-bold">
                     INFERENCE (Heuristic)
                   </span>
                 </td>
               </tr>
-              <tr>
-                <td className="p-3 font-semibold text-slate-900 font-mono">7. Cross-Chain Bridge Linkage</td>
-                <td className="p-3 font-mono font-bold text-blue-600">10 pts</td>
-                <td className="p-3">
+              <tr className="hover:bg-slate-50/60 transition-colors">
+                <td className="py-4 pl-6 pr-3 font-bold text-slate-900 text-xs border-none">7. Cross-Chain Bridge Linkage</td>
+                <td className="py-4 px-3.5 font-bold text-[#9a7547] text-xs border-none">10 pts</td>
+                <td className="py-4 px-3.5 text-xs text-slate-700 font-medium border-none">
                   Detection of verified bridge protocol contract interaction (e.g. Stargate, Wormhole, cBridge) linking EVM origin to TRON destination.
                 </td>
-                <td className="p-3">
-                  <span className="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-mono">
+                <td className="py-4 pl-3.5 pr-6 whitespace-nowrap border-none">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#d1fae5] text-[#065f46] text-xs font-bold">
                     FACT (Bridge Contract)
                   </span>
                 </td>
               </tr>
-              <tr className="bg-rose-50/40">
-                <td className="p-3 font-semibold text-rose-900 font-mono">8. Ambiguity & Mixer Penalty</td>
-                <td className="p-3 font-mono font-bold text-rose-600">-25 pts max</td>
-                <td className="p-3 text-rose-800">
+              <tr className="hover:bg-slate-50/60 transition-colors">
+                <td className="py-4 pl-6 pr-3 font-bold text-slate-900 text-xs border-none">8. Ambiguity &amp; Mixer Penalty</td>
+                <td className="py-4 px-3.5 font-bold text-[#9a7547] text-xs border-none">-25 pts max</td>
+                <td className="py-4 px-3.5 text-xs text-slate-600 font-medium border-none">
                   {'Deductions: Privacy pool / mixer detected = -15 pts; High intermediary hops (> 2 intermediaries) = -10 pts.'}
                 </td>
-                <td className="p-3">
-                  <span className="px-2 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200 text-[10px] font-mono">
+                <td className="py-4 pl-3.5 pr-6 whitespace-nowrap border-none">
+                  <span className="inline-block px-3 py-1 rounded-full bg-[#fef2f2] text-[#dc2626] border border-[#fecaca] text-xs font-bold">
                     PENALTY (Uncertainty)
                   </span>
                 </td>
@@ -373,10 +369,10 @@ export const MLAlgorithmResearch: React.FC = () => {
       </div>
 
       {/* Section 3: Interactive PoAE Algorithm Simulator */}
-      <div className="rounded-2xl bg-white border border-blue-200 p-6 shadow-sm space-y-6 bg-gradient-to-br from-white to-blue-50/20">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-blue-100 pb-4">
+      <div className="rounded-2xl bg-white border border-[#e7ebf2] p-6 shadow-sm space-y-6 bg-white">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
           <div>
-            <div className="flex items-center gap-2 text-blue-600 font-mono text-xs font-semibold uppercase tracking-wider">
+            <div className="flex items-center gap-2 text-[#9a7547] font-mono text-xs font-semibold uppercase tracking-wider">
               <Calculator className="h-4 w-4" /> Interactive Algorithm Laboratory
             </div>
             <h3 className="text-lg font-bold text-slate-900">
@@ -401,7 +397,7 @@ export const MLAlgorithmResearch: React.FC = () => {
               <select
                 value={labelConfidence}
                 onChange={(e) => setLabelConfidence(e.target.value as any)}
-                className="w-full text-xs font-mono p-2.5 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-blue-500"
+                className="w-full text-xs font-mono p-2.5 rounded-lg border border-slate-300 bg-white focus:ring-2 focus:ring-[#9a7547]"
               >
                 <option value="VERIFIED">VERIFIED (+30 pts)</option>
                 <option value="STRONG">STRONG ASSOCIATION (+20 pts)</option>
@@ -413,7 +409,7 @@ export const MLAlgorithmResearch: React.FC = () => {
             <div>
               <div className="flex justify-between text-xs font-mono mb-1">
                 <span className="text-slate-700 font-medium">Hop Distance (W₂ = 20)</span>
-                <span className="text-blue-600 font-bold">{hopDistance} Hops (+{pathScore} pts)</span>
+                <span className="text-[#9a7547] font-bold">{hopDistance} Hops (+{pathScore} pts)</span>
               </div>
               <input
                 type="range"
@@ -422,7 +418,7 @@ export const MLAlgorithmResearch: React.FC = () => {
                 step="1"
                 value={hopDistance}
                 onChange={(e) => setHopDistance(parseInt(e.target.value))}
-                className="w-full accent-blue-600"
+                className="w-full accent-[#9a7547]"
               />
               <div className="flex justify-between text-[10px] text-slate-400 font-mono mt-0.5">
                 <span>1 Hop (20)</span>
@@ -445,7 +441,7 @@ export const MLAlgorithmResearch: React.FC = () => {
                 step="1"
                 value={intermediaryCount}
                 onChange={(e) => setIntermediaryCount(parseInt(e.target.value))}
-                className="w-full accent-blue-600"
+                className="w-full accent-[#9a7547]"
               />
             </div>
           </div>
@@ -455,7 +451,7 @@ export const MLAlgorithmResearch: React.FC = () => {
             <div>
               <div className="flex justify-between text-xs font-mono mb-1">
                 <span className="text-slate-700 font-medium">Suspect Sent vs Received (W₃ = 20)</span>
-                <span className="text-blue-600 font-bold">{(flowRatio * 100).toFixed(1)}% (+{flowScore} pts)</span>
+                <span className="text-[#9a7547] font-bold">{(flowRatio * 100).toFixed(1)}% (+{flowScore} pts)</span>
               </div>
               <div className="grid grid-cols-2 gap-2">
                 <div>
@@ -482,7 +478,7 @@ export const MLAlgorithmResearch: React.FC = () => {
             <div>
               <div className="flex justify-between text-xs font-mono mb-1">
                 <span className="text-slate-700 font-medium">Path Velocity (W₄ = 15)</span>
-                <span className="text-blue-600 font-bold">{hoursElapsed} Hours (+{tempScore} pts)</span>
+                <span className="text-[#9a7547] font-bold">{hoursElapsed} Hours (+{tempScore} pts)</span>
               </div>
               <input
                 type="range"
@@ -491,7 +487,7 @@ export const MLAlgorithmResearch: React.FC = () => {
                 step="1"
                 value={hoursElapsed}
                 onChange={(e) => setHoursElapsed(parseInt(e.target.value))}
-                className="w-full accent-blue-600"
+                className="w-full accent-[#9a7547]"
               />
               <div className="flex justify-between text-[10px] text-slate-400 font-mono mt-0.5">
                 <span>{'<24h (15)'}</span>
@@ -507,7 +503,7 @@ export const MLAlgorithmResearch: React.FC = () => {
                   type="checkbox"
                   checked={isClusterAssociated}
                   onChange={(e) => setIsClusterAssociated(e.target.checked)}
-                  className="rounded text-blue-600 focus:ring-blue-500"
+                  className="rounded text-[#9a7547] focus:ring-[#9a7547]"
                 />
                 <span>Co-Spending / Deposit Sweep Cluster (+10 pts)</span>
               </label>
@@ -517,17 +513,17 @@ export const MLAlgorithmResearch: React.FC = () => {
                   type="checkbox"
                   checked={hasCrossChainBridge}
                   onChange={(e) => setHasCrossChainBridge(e.target.checked)}
-                  className="rounded text-blue-600 focus:ring-blue-500"
+                  className="rounded text-[#9a7547] focus:ring-[#9a7547]"
                 />
                 <span>Verified Cross-Chain Bridge Linked (+10 pts)</span>
               </label>
 
-              <label className="flex items-center gap-2 text-xs font-mono text-rose-700 cursor-pointer">
+              <label className="flex items-center gap-2 text-xs font-mono text-slate-800 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={hasMixerInteraction}
                   onChange={(e) => setHasMixerInteraction(e.target.checked)}
-                  className="rounded text-rose-600 focus:ring-rose-500"
+                  className="rounded text-[#9a7547] focus:ring-[#9a7547]"
                 />
                 <span>Mixer / Privacy Pool Encountered (-15 pts penalty)</span>
               </label>
@@ -558,7 +554,7 @@ export const MLAlgorithmResearch: React.FC = () => {
               <div className="w-full bg-slate-100 rounded-full h-3 overflow-hidden border border-slate-200">
                 <div
                   className={`h-full transition-all duration-300 ${
-                    finalScore >= 80 ? 'bg-emerald-500' : finalScore >= 50 ? 'bg-amber-500' : 'bg-rose-500'
+                    'bg-[#9a7547]'
                   }`}
                   style={{ width: `${finalScore}%` }}
                 />
@@ -594,7 +590,7 @@ export const MLAlgorithmResearch: React.FC = () => {
                 <span className="text-slate-900 font-bold">+{clusterScore + crossChainScore} pts</span>
               </div>
               {ambiguityPenalty > 0 && (
-                <div className="flex justify-between text-rose-600 font-bold">
+                <div className="flex justify-between text-[#9a7547] font-bold">
                   <span>Ambiguity Penalties:</span>
                   <span>-{ambiguityPenalty} pts</span>
                 </div>
@@ -606,7 +602,7 @@ export const MLAlgorithmResearch: React.FC = () => {
 
       {/* Section 4: Graph Traversal & Laundering Typologies */}
       <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm space-y-5">
-        <div className="flex items-center gap-2 text-blue-600 font-mono text-xs font-semibold uppercase tracking-wider">
+        <div className="flex items-center gap-2 text-[#9a7547] font-mono text-xs font-semibold uppercase tracking-wider">
           <Network className="h-4 w-4" /> Section 3. Graph Traversal Algorithms & Laundering Typologies
         </div>
         <h2 className="text-xl font-bold text-slate-900">
@@ -621,9 +617,9 @@ export const MLAlgorithmResearch: React.FC = () => {
           <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-xs space-y-2">
             <div className="flex items-center justify-between">
               <span className="font-bold text-slate-800 text-xs font-mono uppercase flex items-center gap-1.5">
-                <AlertTriangle className="h-4 w-4 text-rose-500" /> 1. Peeling Chain Heuristic
+                <AlertTriangle className="h-4 w-4 text-[#9a7547]" /> 1. Peeling Chain Heuristic
               </span>
-              <span className="px-2 py-0.5 rounded bg-rose-50 text-rose-700 text-[10px] font-mono font-bold">
+              <span className="px-2 py-0.5 rounded bg-[#fbf7f1] text-[#9a7547] border border-[#9a7547]/30 text-[10px] font-mono font-bold">
                 HIGH SEVERITY
               </span>
             </div>
@@ -639,9 +635,9 @@ export const MLAlgorithmResearch: React.FC = () => {
           <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-xs space-y-2">
             <div className="flex items-center justify-between">
               <span className="font-bold text-slate-800 text-xs font-mono uppercase flex items-center gap-1.5">
-                <AlertTriangle className="h-4 w-4 text-amber-500" /> 2. Fan-Out Dispersal (Structuring)
+                <AlertTriangle className="h-4 w-4 text-[#9a7547]" /> 2. Fan-Out Dispersal (Structuring)
               </span>
-              <span className="px-2 py-0.5 rounded bg-amber-50 text-amber-700 text-[10px] font-mono font-bold">
+              <span className="px-2 py-0.5 rounded bg-slate-50 text-slate-700 border border-slate-200 text-[10px] font-mono font-bold">
                 HIGH SEVERITY
               </span>
             </div>
@@ -657,9 +653,9 @@ export const MLAlgorithmResearch: React.FC = () => {
           <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-xs space-y-2">
             <div className="flex items-center justify-between">
               <span className="font-bold text-slate-800 text-xs font-mono uppercase flex items-center gap-1.5">
-                <AlertTriangle className="h-4 w-4 text-blue-500" /> 3. Fan-In Aggregation
+                <AlertTriangle className="h-4 w-4 text-[#9a7547]" /> 3. Fan-In Aggregation
               </span>
-              <span className="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-mono font-bold">
+              <span className="px-2 py-0.5 rounded bg-[#fbf7f1] text-[#9a7547] text-[10px] font-mono font-bold">
                 MEDIUM SEVERITY
               </span>
             </div>
@@ -675,9 +671,9 @@ export const MLAlgorithmResearch: React.FC = () => {
           <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-xs space-y-2">
             <div className="flex items-center justify-between">
               <span className="font-bold text-slate-800 text-xs font-mono uppercase flex items-center gap-1.5">
-                <AlertTriangle className="h-4 w-4 text-purple-500" /> 4. High-Velocity Layering
+                <AlertTriangle className="h-4 w-4 text-[#9a7547]" /> 4. High-Velocity Layering
               </span>
-              <span className="px-2 py-0.5 rounded bg-purple-50 text-purple-700 text-[10px] font-mono font-bold">
+              <span className="px-2 py-0.5 rounded bg-[#fbf7f1] text-[#9a7547] text-[10px] font-mono font-bold">
                 MEDIUM SEVERITY
               </span>
             </div>
@@ -693,7 +689,7 @@ export const MLAlgorithmResearch: React.FC = () => {
 
       {/* Section 5: Legal & Evidentiary Standards for Court Admissibility */}
       <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm space-y-4">
-        <div className="flex items-center gap-2 text-blue-600 font-mono text-xs font-semibold uppercase tracking-wider">
+        <div className="flex items-center gap-2 text-[#9a7547] font-mono text-xs font-semibold uppercase tracking-wider">
           <FileCheck2 className="h-4 w-4" /> Section 4. Legal Compliance & Court-Admissibility Standards
         </div>
         <h2 className="text-xl font-bold text-slate-900">
@@ -705,21 +701,21 @@ export const MLAlgorithmResearch: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
           {/* Facts */}
-          <div className="p-4 rounded-xl bg-emerald-50/60 border border-emerald-200 space-y-2">
-            <div className="flex items-center gap-2 text-emerald-800 font-bold text-xs font-mono uppercase">
-              <CheckCircle2 className="h-4 w-4 text-emerald-600" /> 1. Verified Facts
+          <div className="p-4 rounded-xl bg-[#fbf7f1]/50 border border-[#9a7547]/20 space-y-2">
+            <div className="flex items-center gap-2 text-[#9a7547] font-bold text-xs font-mono uppercase">
+              <CheckCircle2 className="h-4 w-4 text-[#9a7547]" /> 1. Verified Facts
             </div>
-            <p className="text-xs text-emerald-900 leading-relaxed">
+            <p className="text-xs text-slate-700 leading-relaxed">
               On-chain immutable ledger records directly verifiable on public blockchains (tx hashes, block numbers, wallet addresses, cryptographic transfer amounts, timestamps).
             </p>
           </div>
 
           {/* Inferences */}
-          <div className="p-4 rounded-xl bg-amber-50/60 border border-amber-200 space-y-2">
-            <div className="flex items-center gap-2 text-amber-800 font-bold text-xs font-mono uppercase">
-              <Info className="h-4 w-4 text-amber-600" /> 2. System Inferences
+          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div className="flex items-center gap-2 text-slate-800 font-bold text-xs font-mono uppercase">
+              <Info className="h-4 w-4 text-[#9a7547]" /> 2. System Inferences
             </div>
-            <p className="text-xs text-amber-900 leading-relaxed">
+            <p className="text-xs text-slate-600 leading-relaxed">
               Algorithmic calculations produced by PoAE and graph heuristics (evidence-strength percentages, flow retention ratios, peel chain flags, path velocities).
             </p>
           </div>
@@ -738,7 +734,7 @@ export const MLAlgorithmResearch: React.FC = () => {
         {/* SHA-256 Digest Note */}
         <div className="p-3.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between text-xs font-mono text-slate-600">
           <span>Cryptographic Provenance Verification: All report packages include SHA-256 digests.</span>
-          <span className="text-blue-600 font-bold">SHA-256 Digest Verified</span>
+          <span className="text-[#9a7547] font-bold">SHA-256 Digest Verified</span>
         </div>
       </div>
     </div>

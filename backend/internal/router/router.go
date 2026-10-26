@@ -4,15 +4,15 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/sih26182/tracex-backend/internal/config"
-	"github.com/sih26182/tracex-backend/internal/connector"
-	"github.com/sih26182/tracex-backend/internal/handler"
-	"github.com/sih26182/tracex-backend/internal/middleware"
-	"github.com/sih26182/tracex-backend/internal/repository"
-	"github.com/sih26182/tracex-backend/internal/service"
-	"github.com/sih26182/tracex-backend/pkg/attribution"
-	"github.com/sih26182/tracex-backend/pkg/audit"
-	"github.com/sih26182/tracex-backend/pkg/sahyog"
+	"github.com/tracex/tracex-backend/internal/config"
+	"github.com/tracex/tracex-backend/internal/connector"
+	"github.com/tracex/tracex-backend/internal/handler"
+	"github.com/tracex/tracex-backend/internal/middleware"
+	"github.com/tracex/tracex-backend/internal/repository"
+	"github.com/tracex/tracex-backend/internal/service"
+	"github.com/tracex/tracex-backend/pkg/attribution"
+	"github.com/tracex/tracex-backend/pkg/audit"
+	"github.com/tracex/tracex-backend/pkg/sahyog"
 )
 
 func SetupRoutes(cfg *config.Config) http.Handler {
@@ -27,7 +27,7 @@ func SetupRoutes(cfg *config.Config) http.Handler {
 			"status":      "online",
 			"version":     "v1.0.0",
 			"health":      "/api/v1/health",
-			"description": "SIH 26182: Explainable Cross-Chain VASP Attribution & Investigation Platform",
+			"description": "TRACE-X: Explainable Cross-Chain VASP Attribution & Investigation Platform",
 		})
 	})
 

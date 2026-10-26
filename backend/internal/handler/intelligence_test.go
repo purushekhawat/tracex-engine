@@ -7,8 +7,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/sih26182/tracex-backend/internal/model"
-	"github.com/sih26182/tracex-backend/internal/service"
+	"github.com/tracex/tracex-backend/internal/model"
+	"github.com/tracex/tracex-backend/internal/service"
 )
 
 func TestIntelligenceEndpoints(t *testing.T) {

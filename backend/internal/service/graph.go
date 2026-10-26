@@ -6,7 +6,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/sih26182/tracex-backend/internal/connector"
+	"github.com/tracex/tracex-backend/internal/connector"
 )
 
 type CytoscapeNode struct {

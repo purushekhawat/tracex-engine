@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/sih26182/tracex-backend/internal/model"
-	"github.com/sih26182/tracex-backend/internal/repository"
+	"github.com/tracex/tracex-backend/internal/model"
+	"github.com/tracex/tracex-backend/internal/repository"
 )
 
 type DemoLoadResponse struct {

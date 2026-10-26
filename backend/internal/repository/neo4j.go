@@ -6,7 +6,7 @@ import (
 	"log"
 	"sync"
 
-	"github.com/sih26182/tracex-backend/internal/connector"
+	"github.com/tracex/tracex-backend/internal/connector"
 )
 
 type Neo4jRepository interface {

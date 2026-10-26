@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sih26182/tracex-backend/pkg/audit"
-	"github.com/sih26182/tracex-backend/pkg/auth"
+	"github.com/tracex/tracex-backend/pkg/audit"
+	"github.com/tracex/tracex-backend/pkg/auth"
 )
 
 type contextKey string

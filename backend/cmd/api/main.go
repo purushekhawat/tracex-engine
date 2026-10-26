@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/sih26182/tracex-backend/internal/config"
-	"github.com/sih26182/tracex-backend/internal/router"
+	"github.com/tracex/tracex-backend/internal/config"
+	"github.com/tracex/tracex-backend/internal/router"
 )
 
 func main() {

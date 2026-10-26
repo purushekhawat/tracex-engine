@@ -1,5 +1,5 @@
 -- TRACE-X PostgreSQL Initial Schema Setup
--- SIH 26182 - Cross-Chain VASP Attribution & Investigation Engine
+-- Cross-Chain VASP Attribution & Investigation Engine
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 

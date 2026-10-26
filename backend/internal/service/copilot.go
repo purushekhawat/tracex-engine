@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/sih26182/tracex-backend/internal/repository"
+	"github.com/tracex/tracex-backend/internal/repository"
 )
 
 type CopilotMessage struct {

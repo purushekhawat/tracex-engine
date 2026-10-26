@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 
-	"github.com/sih26182/tracex-backend/internal/model"
+	"github.com/tracex/tracex-backend/internal/model"
 )
 
 type RiskIndicator struct {
@@ -68,7 +68,7 @@ func (s *RiskAssessmentService) EvaluateRisk(ctx context.Context, invID string) 
 				},
 			},
 			Limitations: []string{
-				"Synthetic demonstration dataset constructed for SIH 26182 evaluation (DEMO DATA).",
+				"Synthetic demonstration dataset constructed for investigation testing (DEMO DATA).",
 				"Risk indicators provide analytical pattern matching and do NOT constitute legal proof of guilt.",
 				"Intermediary relay wallets may represent OTC desks or payment gateways.",
 			},
@@ -111,7 +111,7 @@ func (s *RiskAssessmentService) EvaluateRisk(ctx context.Context, invID string) 
 				},
 			},
 			Limitations: []string{
-				"Synthetic cross-chain demonstration dataset constructed for SIH 26182 evaluation (DEMO DATA).",
+				"Synthetic cross-chain demonstration dataset constructed for investigation testing (DEMO DATA).",
 				"Bridge metadata verified via mock cross-chain protocol telemetry.",
 				"Lawful legal requests require investigator confirmation before external SAHYOG submission.",
 			},

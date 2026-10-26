@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/sih26182/tracex-backend/internal/service"
+	"github.com/tracex/tracex-backend/internal/service"
 )
 
 type ReportHandler struct {

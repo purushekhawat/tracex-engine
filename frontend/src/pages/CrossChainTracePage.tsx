@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
   Network,
   Layers,
@@ -17,9 +17,10 @@ import {
   loadDemoCrossChain,
 } from '../api/client';
 import { CytoscapeGraph } from '../components/CytoscapeGraph';
-import { DemoBadge } from '../components/DemoBadge';
+import SpecularButton from '../components/SpecularButton';
 
 export const CrossChainTracePage: React.FC = () => {
+  const navigate = useNavigate();
   // Scenario state: 'investment-fraud' (EVM) vs 'cross-chain' (ETH -> TRON)
   const [activeScenario, setActiveScenario] = useState<'investment-fraud' | 'cross-chain'>('cross-chain');
   const [investigationId, setInvestigationId] = useState('inv-demo-cross-chain-2026');
@@ -149,36 +150,34 @@ export const CrossChainTracePage: React.FC = () => {
   return (
     <div className="space-y-6 pb-12">
       {/* Top Banner */}
-      <div className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm relative overflow-hidden">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="glass-card ai-card-bg p-6 sm:p-7 relative overflow-hidden !border-[#e7ebf2]">
+        <div className="topo-lines" />
+        <div className="absolute top-0 right-0 w-48 h-48 bg-[#9a7547]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-mono font-medium">
-                <Network className="h-3.5 w-3.5 text-blue-600" /> Multi-Chain Graph Intelligence
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fbf7f1] border border-[#9a7547]/30 text-[#9a7547] text-xs font-bold font-mono">
+                <Network className="h-3.5 w-3.5 text-[#9a7547]" /> Multi-Chain Graph Intelligence
               </span>
-              <span className="px-2.5 py-0.5 rounded bg-purple-50 text-purple-700 border border-purple-200 text-xs font-mono font-medium">
-                Cross-Chain Tracing
-              </span>
-              <DemoBadge />
             </div>
-            <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+            <h1 className="text-2xl font-black tracking-tight text-slate-900 sm:text-3xl">
               Cross-Chain Trace Graph Explorer
             </h1>
-            <p className="text-xs text-slate-500 max-w-2xl leading-relaxed">
+            <p className="text-xs text-slate-500 max-w-2xl leading-relaxed font-medium">
               Interactive visualization of cryptocurrency fund flows, wallet clusters, and cross-chain bridge movements across Ethereum and TRON networks.
             </p>
           </div>
 
           {/* Scenario Selector Chips */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
-            <span className="text-xs font-mono text-slate-500">Preset Scenario:</span>
-            <div className="inline-flex rounded-xl p-1 bg-slate-100 border border-slate-200">
+            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider text-[11px]">Preset Scenario:</span>
+            <div className="inline-flex rounded-xl p-1 bg-slate-100 border border-[#e7ebf2]">
               <button
                 onClick={() => handleSelectScenario('cross-chain')}
                 disabled={isSwitching}
-                className={`px-3 py-1.5 rounded-lg text-xs font-mono transition flex items-center gap-1.5 ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
                   activeScenario === 'cross-chain'
-                    ? 'bg-blue-600 text-white shadow-sm font-semibold'
+                    ? 'bg-[#9a7547] text-white shadow-xs'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
@@ -188,63 +187,78 @@ export const CrossChainTracePage: React.FC = () => {
               <button
                 onClick={() => handleSelectScenario('investment-fraud')}
                 disabled={isSwitching}
-                className={`px-3 py-1.5 rounded-lg text-xs font-mono transition flex items-center gap-1.5 ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
                   activeScenario === 'investment-fraud'
-                    ? 'bg-blue-600 text-white shadow-sm font-semibold'
+                    ? 'bg-[#9a7547] text-white shadow-xs'
                     : 'text-slate-600 hover:text-slate-900'
                 }`}
               >
                 <ShieldAlert className="h-3.5 w-3.5" />
-                Investment Fraud (EVM Multi-Hop)
+                Investment Fraud (EVM)
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Cross-Chain Bridge Movement Banner (when cross-chain scenario active) */}
+      {/* Cross-Chain Bridge Movement Banner */}
       {activeScenario === 'cross-chain' && (
-        <div className="p-4 rounded-xl bg-gradient-to-r from-purple-50 via-blue-50 to-emerald-50 border border-purple-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="p-4 sm:p-5 rounded-2xl bg-[#fbf7f1] border border-[#9a7547]/30 shadow-2xs flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-lg bg-purple-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+            <div className="h-10 w-10 rounded-xl bg-[#9a7547] text-white flex items-center justify-center shrink-0 shadow-xs">
               <ArrowRightLeft className="h-5 w-5" />
             </div>
             <div>
-              <div className="flex items-center gap-2 font-mono text-xs font-bold text-purple-900">
+              <div className="flex items-center gap-2 text-xs font-bold text-[#9a7547]">
                 <span>CROSS-CHAIN BRIDGE EVENT DETECTED:</span>
-                <span className="px-2 py-0.5 rounded bg-purple-200/80 text-purple-800">
+                <span className="px-2 py-0.5 rounded-full bg-white text-[#9a7547] border border-[#9a7547]/30 font-mono text-[10px]">
                   STARGATE PROTOCOL
                 </span>
               </div>
-              <div className="text-xs text-slate-600 mt-0.5">
-                Funds bridged from <strong className="text-blue-700">Ethereum EVM</strong> into{' '}
-                <strong className="text-emerald-700">TRON Network (USDT-TRC20)</strong> and deposited into{' '}
-                <strong className="text-slate-900">OKX TRON Hot Wallet Pool</strong>.
+              <div className="text-xs text-slate-700 mt-0.5 font-medium">
+                Funds bridged from <strong className="text-slate-900 font-bold">Ethereum EVM</strong> into{' '}
+                <strong className="text-[#9a7547] font-bold">TRON Network (USDT-TRC20)</strong> and deposited into{' '}
+                <strong className="text-slate-900 font-bold">OKX TRON Hot Wallet Pool</strong>.
               </div>
             </div>
           </div>
 
-          <div className="flex items-center gap-3 font-mono text-xs shrink-0">
+          <div className="flex items-center gap-3 text-xs shrink-0">
             <div className="text-right">
-              <span className="text-[10px] text-slate-400 block uppercase">Bridged Value</span>
-              <span className="text-sm font-bold text-purple-700">$139,500.00 USD</span>
+              <span className="text-[10px] text-slate-400 block uppercase font-bold">Bridged Value</span>
+              <span className="text-sm font-black text-[#9a7547]">$139,500.00 USD</span>
             </div>
-            <Link
-              to="/dashboard/vasp-intelligence"
-              className="inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-white border border-purple-200 text-purple-700 hover:bg-purple-50 transition text-xs font-mono font-medium shadow-2xs"
+            <SpecularButton
+              onClick={() => navigate('/dashboard/vasp-intelligence')}
+              size="xs"
+              radius={10}
+              tint="#9a7547"
+              tintOpacity={1}
+              textColor="#ffffff"
+              lineColor="#ffffff"
+              baseColor="#b48c58"
+              intensity={1.5}
+              idleIntensity={0.5}
+              glow={1.4}
+              speed={0.4}
+              autoAnimate={true}
+              followMouse={true}
+              className="font-bold cursor-pointer hover:brightness-110 shadow-xs"
+              title="VASP Attribution Analysis"
             >
-              VASP Attribution <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
+              <span>VASP Attribution</span>
+              <ArrowRight className="h-3.5 w-3.5 text-white/80" />
+            </SpecularButton>
           </div>
         </div>
       )}
 
       {/* Cytoscape.js Interactive Graph Canvas Container */}
-      <div className="rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden">
-        <div className="p-4 border-b border-slate-200 flex flex-wrap items-center justify-between gap-3 bg-slate-50/50">
+      <div className="glass-card ai-card-bg overflow-hidden !border-[#e7ebf2]">
+        <div className="p-4 border-b border-slate-100 flex flex-wrap items-center justify-between gap-3 bg-white">
           <div className="flex items-center gap-2">
-            <h2 className="text-sm font-bold text-slate-900 uppercase font-mono tracking-wider flex items-center gap-2">
-              <Network className="h-4 w-4 text-blue-600" /> Interactive Graph Canvas
+            <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider flex items-center gap-2">
+              <Network className="h-4 w-4 text-[#9a7547]" /> Interactive Graph Canvas
             </h2>
             <span className="text-xs text-slate-400 font-mono">
               ({nodes.length} Nodes &bull; {edges.length} Edges)
@@ -252,25 +266,25 @@ export const CrossChainTracePage: React.FC = () => {
           </div>
 
           {/* Quick Legend Chips */}
-          <div className="flex flex-wrap items-center gap-2 text-[11px] font-mono">
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200">
-              <span className="h-2 w-2 rounded-full bg-rose-500" /> Suspect Wallet
+          <div className="flex flex-wrap items-center gap-2 text-[11px] font-bold">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#fbf7f1] text-[#9a7547] border border-[#9a7547]/30">
+              <span className="h-2 w-2 rounded-full bg-[#9a7547]" /> Suspect Wallet
             </span>
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-sky-50 text-sky-700 border border-sky-200">
-              <span className="h-2 w-2 rounded-full bg-sky-500" /> Intermediary Relay
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-50 text-slate-700 border border-slate-200">
+              <span className="h-2 w-2 rounded-full bg-slate-400" /> Intermediary Relay
             </span>
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-purple-50 text-purple-700 border border-purple-200">
-              <span className="h-2 w-2 rounded-full bg-purple-500" /> Cross-Chain Bridge
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#fbf7f1] text-[#9a7547] border border-[#9a7547]/30">
+              <span className="h-2 w-2 rounded-full bg-[#9a7547]" /> Cross-Chain Bridge
             </span>
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">
-              <span className="h-2 w-2 rounded-full bg-emerald-500" /> VASP Deposit Pool
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#9a7547] text-white border border-[#9a7547]">
+              <span className="h-2 w-2 rounded-full bg-white" /> VASP Deposit Pool
             </span>
           </div>
         </div>
 
         {/* The Graph Component */}
         {loadingGraph ? (
-          <div className="h-[600px] flex items-center justify-center font-mono text-xs text-slate-400">
+          <div className="h-[600px] flex items-center justify-center text-xs text-slate-400 font-medium">
             Rendering multi-hop Cytoscape.js topology...
           </div>
         ) : (
@@ -283,53 +297,68 @@ export const CrossChainTracePage: React.FC = () => {
       </div>
 
       {/* Bottom Summary Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
         {/* Card 1: Fund Flow Timeline */}
-        <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-sm space-y-3">
-          <div className="flex items-center justify-between text-slate-700 font-mono text-xs font-bold uppercase border-b border-slate-100 pb-2">
+        <div className="glass-card ai-card-bg p-6 space-y-3 !border-[#e7ebf2]">
+          <div className="flex items-center justify-between text-slate-800 text-xs font-bold uppercase border-b border-slate-100 pb-2">
             <span>Fund Flow Velocity</span>
-            <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+            <CheckCircle2 className="h-4 w-4 text-[#9a7547]" />
           </div>
-          <p className="text-xs text-slate-600">
-            Funds navigated across 3 hops in less than 2 hours and 15 minutes, matching the <strong>High-Velocity Layering</strong> laundering typology.
+          <p className="text-xs text-slate-600 leading-relaxed font-medium">
+            Funds navigated across 3 hops in less than 2 hours and 15 minutes, matching the <strong className="text-slate-900">High-Velocity Layering</strong> laundering typology.
           </p>
-          <div className="text-[11px] font-mono text-slate-400">
+          <div className="text-[11px] text-[#9a7547] font-bold">
             Average Hop Duration: ~45 Minutes
           </div>
         </div>
 
         {/* Card 2: Wallet Clusters */}
-        <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-sm space-y-3">
-          <div className="flex items-center justify-between text-slate-700 font-mono text-xs font-bold uppercase border-b border-slate-100 pb-2">
+        <div className="glass-card ai-card-bg p-6 space-y-3 !border-[#e7ebf2]">
+          <div className="flex items-center justify-between text-slate-800 text-xs font-bold uppercase border-b border-slate-100 pb-2">
             <span>Co-Spending Clusters</span>
-            <GitFork className="h-4 w-4 text-blue-500" />
+            <GitFork className="h-4 w-4 text-[#9a7547]" />
           </div>
-          <p className="text-xs text-slate-600">
+          <p className="text-xs text-slate-600 leading-relaxed font-medium">
             Deposit address sweep behaviors indicate the terminal destination wallet is part of a high-volume exchange hot wallet cluster.
           </p>
-          <div className="text-[11px] font-mono text-emerald-600 font-bold">
-            Cluster Confidence: 94.8%
+          <div className="text-[11px] text-[#9a7547] font-bold">
+            Cluster Confidence: 94.8% Verified
           </div>
         </div>
 
         {/* Card 3: Forensics & Section 91 Summons */}
-        <div className="p-5 rounded-xl bg-white border border-slate-200 shadow-sm space-y-3 flex flex-col justify-between">
+        <div className="glass-card ai-card-bg p-6 space-y-3 flex flex-col justify-between !border-[#e7ebf2]">
           <div>
-            <div className="flex items-center justify-between text-slate-700 font-mono text-xs font-bold uppercase border-b border-slate-100 pb-2">
+            <div className="flex items-center justify-between text-slate-800 text-xs font-bold uppercase border-b border-slate-100 pb-2">
               <span>Forensic Evidence</span>
-              <Building2 className="h-4 w-4 text-purple-500" />
+              <Building2 className="h-4 w-4 text-[#9a7547]" />
             </div>
-            <p className="text-xs text-slate-600 mt-2">
+            <p className="text-xs text-slate-600 mt-2 leading-relaxed font-medium">
               Export court-ready forensic reports and prepare Section 91 CrPC lawful freeze / KYC disclosure notices.
             </p>
           </div>
           <div className="pt-2">
-            <Link
-              to="/reports"
-              className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-500 transition text-xs font-mono"
+            <SpecularButton
+              onClick={() => navigate('/reports')}
+              size="xs"
+              radius={10}
+              tint="#9a7547"
+              tintOpacity={1}
+              textColor="#ffffff"
+              lineColor="#ffffff"
+              baseColor="#b48c58"
+              intensity={1.5}
+              idleIntensity={0.5}
+              glow={1.4}
+              speed={0.4}
+              autoAnimate={true}
+              followMouse={true}
+              className="w-full font-bold cursor-pointer hover:brightness-110 shadow-xs"
+              title="Generate Forensic Package"
             >
-              Generate Forensic Package <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
+              <span>Generate Forensic Package</span>
+              <ArrowRight className="h-3.5 w-3.5 text-white/80" />
+            </SpecularButton>
           </div>
         </div>
       </div>

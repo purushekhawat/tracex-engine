@@ -1,7 +1,7 @@
 # TRACE-X: Explainable Cross-Chain VASP Attribution & Investigation Engine
 ## System Architecture & Technical Specifications
 
-> **Problem Statement**: SIH 26182 — Automated Attribution of Unknown Cryptocurrency Wallets to Nearest Virtual Asset Service Providers (VASPs) through Blockchain Intelligence APIs.  
+> **Mission**: Automated Attribution of Unknown Cryptocurrency Wallets to Nearest Virtual Asset Service Providers (VASPs) through Blockchain Intelligence APIs.  
 > **Target Audience**: Law Enforcement Agencies (LEAs), Financial Intelligence Units (FIUs), and Cyber Crime Investigators.
 
 ---

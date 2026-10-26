@@ -1,11 +1,11 @@
-# TRACE-X SIH 26182 Feature & Requirement Matrix
+# TRACE-X Feature & Requirement Matrix
 **Explainable Cross-Chain VASP Attribution & Lawful Investigation Engine**
 
 ---
 
 ## Complete Requirement Mapping
 
-| # | SIH 26182 Mandated Requirement | Implementation Component | Implementation Details & Controls | Status |
+| # | Mandated Requirement | Implementation Component | Implementation Details & Controls | Status |
 |---|---|---|---|---|
 | **1** | Multi-Blockchain Support (EVM, TRON, BTC, Polygon, Solana) | `pkg/connector` Provider Factory | Abstraction interfaces for Ethereum RPC, TronGrid API, Blockstream BTC & synthetic fallback connectors. | `IMPLEMENTED & VERIFIED` |
 | **2** | Wallet Address Validation | `connector.ValidateAddress` | Format verification for EVM (`0x` + 40 hex) and TRON (`T` + 33 base58). Rejects malformed strings. | `IMPLEMENTED & VERIFIED` |
@@ -20,7 +20,7 @@
 | **11** | 14-Section Forensic Investigation Report | `service.ReportService` | Court-admissible investigation report package with SHA-256 evidence proof digest and printable PDF export. | `IMPLEMENTED & VERIFIED` |
 | **12** | SAHYOG Lawful Integration Adapter | `pkg/sahyog` Client & UI | Section 91 CrPC legal disclosure & freeze draft generation with mandatory investigator badge badge & checkbox confirmation modal. | `IMPLEMENTED & VERIFIED` |
 | **13** | Security Hardening & RBAC | `internal/middleware` | JWT auth, salted HMAC-SHA256 password hashing, RBAC (`ADMIN`, `INVESTIGATOR`, `SUPERVISOR`, `AUDITOR`), case authorization scoping, OWASP security headers, rate limiting & secret redaction. | `IMPLEMENTED & VERIFIED` |
-| **14** | Controlled Demonstration Mode | `service.DemoService` | Deterministic synthetic investment fraud (Scenario 1) and cross-chain fraud (Scenario 2) loaders for repeatable SIH judging presentations. | `IMPLEMENTED & VERIFIED` |
+| **14** | Controlled Demonstration Mode | `service.DemoService` | Deterministic synthetic investment fraud (Scenario 1) and cross-chain fraud (Scenario 2) loaders for repeatable demonstrations. | `IMPLEMENTED & VERIFIED` |
 
 ---
 
@@ -31,4 +31,4 @@ TRACE-X enforces strict evidential segregation across all UI views and generated
 - **VERIFIED (FACT)**: Immutable on-chain ledger data, block numbers, transaction hashes, timestamps, and verified VASP registry hot wallet labels.
 - **INFERRED (HEURISTIC)**: Multi-hop graph traversal metrics, value retention ratios, peeling chain pattern detection, and PoAE probability scores.
 - **UNKNOWN**: Unobserved off-chain identities, internal exchange sub-ledgers, and unlinked cross-chain transfers.
-- **DEMO DATA**: Synthetic entities, wallets, and transactions constructed for SIH evaluation.
+- **DEMO DATA**: Synthetic entities, wallets, and transactions constructed for forensic evaluation.

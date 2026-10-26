@@ -81,7 +81,7 @@ export const CytoscapeGraph: React.FC<CytoscapeGraphProps> = ({ nodes, edges, su
         {
           selector: 'node',
           style: {
-            'background-color': '#0284c7',
+            'background-color': '#64748b',
             'label': 'data(label)',
             'color': '#0f172a',
             'font-family': 'Plus Jakarta Sans, sans-serif',
@@ -98,8 +98,8 @@ export const CytoscapeGraph: React.FC<CytoscapeGraphProps> = ({ nodes, edges, su
         {
           selector: 'node[isSuspect = "true"]',
           style: {
-            'background-color': '#ef4444',
-            'border-color': '#fee2e2',
+            'background-color': '#334155',
+            'border-color': '#94a3b8',
             'border-width': 3,
             'width': 44,
             'height': 44,
@@ -108,8 +108,8 @@ export const CytoscapeGraph: React.FC<CytoscapeGraphProps> = ({ nodes, edges, su
         {
           selector: 'node[isVASP = "true"]',
           style: {
-            'background-color': '#2563eb',
-            'border-color': '#dbeafe',
+            'background-color': '#9a7547',
+            'border-color': '#fbf7f1',
             'border-width': 3,
             'width': 44,
             'height': 44,
@@ -136,8 +136,8 @@ export const CytoscapeGraph: React.FC<CytoscapeGraphProps> = ({ nodes, edges, su
         {
           selector: 'edge[isBridge = "true"]',
           style: {
-            'line-color': '#9333ea',
-            'target-arrow-color': '#9333ea',
+            'line-color': '#9a7547',
+            'target-arrow-color': '#9a7547',
             'line-style': 'dashed',
             'width': 3,
           },
@@ -145,18 +145,18 @@ export const CytoscapeGraph: React.FC<CytoscapeGraphProps> = ({ nodes, edges, su
         {
           selector: ':selected',
           style: {
-            'border-color': '#f59e0b',
+            'border-color': '#9a7547',
             'border-width': 4,
           },
         },
         {
           selector: '.highlighted',
           style: {
-            'background-color': '#d97706',
-            'border-color': '#fef3c7',
+            'background-color': '#9a7547',
+            'border-color': '#fbf7f1',
             'border-width': 4,
-            'line-color': '#d97706',
-            'target-arrow-color': '#d97706',
+            'line-color': '#9a7547',
+            'target-arrow-color': '#9a7547',
           },
         },
       ],
@@ -250,7 +250,7 @@ export const CytoscapeGraph: React.FC<CytoscapeGraphProps> = ({ nodes, edges, su
             value={searchQuery}
             onChange={(e) => handleSearch(e.target.value)}
             placeholder="Search address (e.g. 0x71C765... or 0x28C6c0...)"
-            className="w-full bg-slate-50 border border-slate-200 focus:bg-white rounded-lg pl-9 pr-4 py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 font-mono"
+            className="w-full bg-slate-50 border border-slate-200 focus:bg-white rounded-lg pl-9 pr-4 py-1.5 text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:border-[#9a7547] font-mono"
           />
         </div>
 
@@ -262,7 +262,7 @@ export const CytoscapeGraph: React.FC<CytoscapeGraphProps> = ({ nodes, edges, su
             <select
               value={maxHopsFilter}
               onChange={(e) => setMaxHopsFilter(Number(e.target.value))}
-              className="bg-slate-50 border border-slate-200 text-blue-600 font-mono px-2 py-1 rounded focus:outline-none"
+              className="bg-slate-50 border border-slate-200 text-[#9a7547] font-mono px-2 py-1 rounded focus:outline-none"
             >
               <option value={1}>1 Hop</option>
               <option value={2}>2 Hops</option>
@@ -281,9 +281,9 @@ export const CytoscapeGraph: React.FC<CytoscapeGraphProps> = ({ nodes, edges, su
               step="5000"
               value={minValueUSD}
               onChange={(e) => setMinValueUSD(Number(e.target.value))}
-              className="accent-blue-600 w-24"
+              className="accent-[#9a7547] w-24"
             />
-            <span className="font-mono text-emerald-600 font-bold">${minValueUSD.toLocaleString()}</span>
+            <span className="font-mono text-[#9a7547] font-bold">${minValueUSD.toLocaleString()}</span>
           </div>
         </div>
       </div>
@@ -318,19 +318,19 @@ export const CytoscapeGraph: React.FC<CytoscapeGraphProps> = ({ nodes, edges, su
         {/* Legend Badge Overlay */}
         <div className="absolute bottom-4 left-4 z-20 hidden sm:flex items-center gap-4 bg-white/95 border border-slate-200 px-3 py-2 rounded-lg text-[11px] text-slate-700 backdrop-blur shadow-md">
           <div className="flex items-center gap-1.5">
-            <span className="h-3 w-3 rounded-full bg-rose-500 border border-rose-300 inline-block" />
+            <span className="h-3 w-3 rounded-full bg-slate-800 border border-slate-600 inline-block" />
             <span>Suspect Wallet</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="h-3 w-3 bg-blue-600 border border-blue-300 inline-block" />
+            <span className="h-3 w-3 bg-[#9a7547] border border-[#fbf7f1] inline-block" />
             <span>VASP Deposit</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="h-3 w-3 rounded-full bg-sky-500 border border-sky-300 inline-block" />
+            <span className="h-3 w-3 rounded-full bg-slate-400 border border-slate-300 inline-block" />
             <span>Intermediary</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <span className="h-3 w-0.5 bg-purple-600 border-t border-dashed border-purple-400 inline-block" />
+            <span className="h-3 w-0.5 bg-[#9a7547] border-t border-dashed border-[#9a7547] inline-block" />
             <span>Cross-Chain Bridge</span>
           </div>
         </div>
@@ -345,7 +345,7 @@ export const CytoscapeGraph: React.FC<CytoscapeGraphProps> = ({ nodes, edges, su
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-600">
                 {selectedElement.group === 'node' ? 'Node Details' : 'Edge Details'}
               </span>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200">
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#fbf7f1] text-[#9a7547] border border-[#9a7547]/30">
                 {selectedElement.data.type || (selectedElement.data.isBridge ? 'CROSS_CHAIN_BRIDGE' : 'TRANSFER')}
               </span>
             </div>
@@ -366,20 +366,20 @@ export const CytoscapeGraph: React.FC<CytoscapeGraphProps> = ({ nodes, edges, su
                 <div className="grid grid-cols-2 gap-2">
                   <div className="p-2 rounded bg-slate-50 border border-slate-200">
                     <div className="text-[10px] text-slate-500 font-mono uppercase">Blockchain</div>
-                    <div className="font-semibold text-blue-600 mt-0.5 capitalize">{selectedElement.data.chain}</div>
+                    <div className="font-semibold text-slate-800 mt-0.5 capitalize">{selectedElement.data.chain}</div>
                   </div>
                   <div className="p-2 rounded bg-slate-50 border border-slate-200">
                     <div className="text-[10px] text-slate-500 font-mono uppercase">Status</div>
-                    <div className="font-semibold text-emerald-600 mt-0.5 flex items-center gap-1">
+                    <div className="font-semibold text-[#9a7547] mt-0.5 flex items-center gap-1">
                       <CheckCircle2 className="h-3 w-3" /> {selectedElement.data.verificationStatus}
                     </div>
                   </div>
                 </div>
 
                 {/* Entity & Related VASP */}
-                <div className="p-2.5 rounded bg-blue-50 border border-blue-200 space-y-1">
+                <div className="p-2.5 rounded bg-[#fbf7f1] border border-[#9a7547]/25 space-y-1">
                   <div className="text-[10px] text-slate-500 uppercase font-mono">Related VASP / Entity</div>
-                  <div className="font-bold text-blue-700 flex items-center gap-1.5">
+                  <div className="font-bold text-[#9a7547] flex items-center gap-1.5">
                     <Building2 className="h-4 w-4" /> {selectedElement.data.vaspName}
                   </div>
                 </div>
@@ -410,7 +410,7 @@ export const CytoscapeGraph: React.FC<CytoscapeGraphProps> = ({ nodes, edges, su
                   </div>
                   <div className="p-2 rounded bg-slate-50 border border-slate-200">
                     <div className="text-[10px] text-slate-500 font-mono uppercase">USD Value</div>
-                    <div className="font-semibold text-emerald-600 mt-0.5">${selectedElement.data.amountUSD?.toLocaleString()}</div>
+                    <div className="font-semibold text-[#9a7547] mt-0.5">${selectedElement.data.amountUSD?.toLocaleString()}</div>
                   </div>
                 </div>
 
@@ -426,21 +426,21 @@ export const CytoscapeGraph: React.FC<CytoscapeGraphProps> = ({ nodes, edges, su
                 <div className="p-2.5 rounded bg-slate-50 border border-slate-200 space-y-2">
                   <div>
                     <span className="text-[10px] text-slate-500 uppercase font-mono">Source (From)</span>
-                    <div className="font-mono text-[11px] text-rose-600 truncate">{selectedElement.data.source}</div>
+                    <div className="font-mono text-[11px] text-slate-800 truncate">{selectedElement.data.source}</div>
                   </div>
                   <div>
                     <span className="text-[10px] text-slate-500 uppercase font-mono">Destination (To)</span>
-                    <div className="font-mono text-[11px] text-blue-600 truncate">{selectedElement.data.target}</div>
+                    <div className="font-mono text-[11px] text-[#9a7547] truncate">{selectedElement.data.target}</div>
                   </div>
                 </div>
 
                 {/* Bridge Metadata if applicable */}
                 {selectedElement.data.isBridge && (
-                  <div className="p-2.5 rounded bg-purple-50 border border-purple-200 text-purple-800 space-y-1">
+                  <div className="p-2.5 rounded bg-[#fbf7f1] border border-[#9a7547]/30 text-slate-800 space-y-1">
                     <div className="font-bold flex items-center gap-1.5">
                       <ExternalLink className="h-4 w-4" /> {selectedElement.data.bridgeName}
                     </div>
-                    <div className="text-[10px] text-purple-700">Verified Cross-Chain Bridge Protocol Event</div>
+                    <div className="text-[10px] text-[#9a7547] font-semibold">Verified Cross-Chain Bridge Protocol Event</div>
                   </div>
                 )}
               </div>

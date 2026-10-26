@@ -1,7 +1,7 @@
-# TRACE-X SIH 2026 Presentation & Demonstration Script
-**Problem Statement SIH 26182: Explainable Cross-Chain VASP Attribution & Lawful Investigation Support Platform**
+# TRACE-X Presentation & Demonstration Script
+**Explainable Cross-Chain VASP Attribution & Lawful Investigation Support Platform**
 **Target Presentation Length:** 5 Minutes  
-**Audience:** SIH Evaluation Panel, Law Enforcement Officers & Technical Jury
+**Audience:** Evaluation Panel, Law Enforcement Officers & Technical Jury
 
 ---
 
@@ -23,7 +23,7 @@
 
 ### Minute 0:00 - 0:30 | Introduction & Problem Setup
 - **Presenter Narrative**:
-  > *"Respected Judges, welcome to TRACE-X — an explainable cross-chain VASP attribution and lawful law-enforcement investigation platform built for SIH 26182. Current blockchain analytics tools either act as black boxes or fail when criminals hop across blockchains or relay funds through pass-through peel chains. TRACE-X solves this by generating cryptographically grounded, court-admissible evidence packages while strictly separating verified facts from system inferences."*
+  > *"Respected Panel, welcome to TRACE-X — an explainable cross-chain VASP attribution and lawful law-enforcement investigation platform. Current blockchain analytics tools either act as black boxes or fail when criminals hop across blockchains or relay funds through pass-through peel chains. TRACE-X solves this by generating cryptographically grounded, court-admissible evidence packages while strictly separating verified facts from system inferences."*
 
 - **Screen View**: Open TRACE-X Command Center Dashboard (`/`). Point to the top header **DEMO DATA** badge and LEA Investigator Auth Badge (`INSPECTOR_SHARMA`).
 
@@ -88,7 +88,7 @@
   > Step 14: Finally, on our SAHYOG Integration tab, investigators can prepare formal Section 91 CrPC legal disclosure and freeze request drafts. In full compliance with legal safeguards, automatic submissions are prohibited — requiring explicit investigator badge confirmation."*
 
 - **Closing Statement**:
-  > *"TRACE-X: Fast, transparent, explainable, and 100% compliant for SIH 26182. Thank you!"*
+  > *"TRACE-X: Fast, transparent, explainable, and compliant with Law Enforcement forensic standards. Thank you!"*
 
 ---
 

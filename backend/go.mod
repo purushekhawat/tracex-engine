@@ -1,4 +1,4 @@
-module github.com/sih26182/tracex-backend
+module github.com/tracex/tracex-backend
 
 go 1.22.4
 

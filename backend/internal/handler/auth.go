@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/sih26182/tracex-backend/pkg/audit"
-	"github.com/sih26182/tracex-backend/pkg/auth"
+	"github.com/tracex/tracex-backend/pkg/audit"
+	"github.com/tracex/tracex-backend/pkg/auth"
 )
 
 type AuthHandler struct {

@@ -7,7 +7,6 @@ import { AttributionPanel } from '../components/AttributionPanel';
 import { InvestigationCopilot } from '../components/InvestigationCopilot';
 import { ReportViewer } from '../components/ReportViewer';
 import { SahyogIntegrationPanel } from '../components/SahyogIntegrationPanel';
-import { DemoBadge } from '../components/DemoBadge';
 import { Network, ShieldAlert, Building2, AlertTriangle, FileText, CheckCircle2, RefreshCw, Bot, FileCheck, Landmark } from 'lucide-react';
 
 export const InvestigationView: React.FC = () => {
@@ -45,31 +44,31 @@ export const InvestigationView: React.FC = () => {
   const suspectAddress = graphData?.suspect_address || '0x71C7656EC7ab88b098defB751B7401B5f6d8976F';
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pb-12">
       {/* Investigation Top Header Bar */}
-      <div className="rounded-2xl bg-white border border-slate-200 p-6 space-y-4 shadow-sm">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="glass-card ai-card-bg p-6 relative overflow-hidden !border-[#e7ebf2] space-y-4">
+        <div className="topo-lines" />
+        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200 text-xs font-mono font-bold">
-                INVESTIGATION ID: {id.slice(0, 8)}
+              <span className="px-3 py-1 rounded-full bg-[#fbf7f1] text-[#9a7547] border border-[#9a7547]/30 text-xs font-mono font-bold">
+                INVESTIGATION ID: {id.slice(0, 12)}
               </span>
-              <DemoBadge />
             </div>
-            <h1 className="text-xl font-bold text-slate-900 tracking-tight mt-1 flex items-center gap-2">
-              <ShieldAlert className="h-5 w-5 text-rose-500" />
-              Suspect Wallet: <span className="font-mono text-rose-600">{suspectAddress}</span>
+            <h1 className="text-xl font-black text-slate-900 tracking-tight mt-1.5 flex items-center gap-2">
+              <ShieldAlert className="h-5 w-5 text-[#9a7547]" />
+              Suspect Wallet: <span className="font-mono text-[#9a7547] text-base">{suspectAddress}</span>
             </h1>
           </div>
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-mono font-medium">
-              <CheckCircle2 className="h-3.5 w-3.5" /> Pipeline Status: COMPLETED
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fbf7f1] text-[#9a7547] border border-[#9a7547]/30 text-xs font-bold font-mono">
+              <CheckCircle2 className="h-3.5 w-3.5 text-[#9a7547]" /> Pipeline Status: COMPLETED
             </span>
           </div>
         </div>
 
         {/* Workspace Sub-Navigation Tabs */}
-        <div className="flex items-center gap-2 border-t border-slate-100 pt-4 overflow-x-auto">
+        <div className="flex items-center gap-2 border-t border-slate-100 pt-4 overflow-x-auto relative z-10 no-scrollbar">
           {[
             { id: 'graph', label: 'Transaction Graph Visualizer', path: `/investigations/${id}/graph`, icon: Network },
             { id: 'attribution', label: 'Proof of Attribution (PoAE)', path: `/investigations/${id}/attribution`, icon: Building2 },
@@ -86,14 +85,14 @@ export const InvestigationView: React.FC = () => {
                 key={tab.id}
                 to={tab.path}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 rounded-lg text-xs font-medium transition flex items-center gap-2 shrink-0 ${
+                className={`px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 shrink-0 border ${
                   isSelected
-                    ? 'bg-blue-600 text-white shadow-sm'
-                    : 'bg-slate-100 text-slate-600 border border-slate-200 hover:text-slate-900 hover:bg-slate-200/80'
+                    ? 'bg-[#fbf7f1] text-[#9a7547] border-[#9a7547]/30 shadow-2xs'
+                    : 'bg-white hover:bg-slate-50 text-slate-600 border-[#e7ebf2]'
                 }`}
               >
-                <Icon className="h-4 w-4" />
-                {tab.label}
+                <Icon className={`h-4 w-4 ${isSelected ? 'text-[#9a7547]' : 'text-slate-400'}`} />
+                <span>{tab.label}</span>
               </Link>
             );
           })}
@@ -104,22 +103,24 @@ export const InvestigationView: React.FC = () => {
       {activeTab === 'graph' && (
         <div className="space-y-4">
           <div className="flex items-center justify-between">
-            <h2 className="text-sm font-semibold text-slate-800 tracking-wide uppercase font-mono flex items-center gap-2">
-              <Network className="h-4 w-4 text-blue-600" /> Interactive Cytoscape.js Multi-Hop Transaction Graph
+            <h2 className="text-sm font-bold text-slate-800 tracking-wide uppercase flex items-center gap-2">
+              <Network className="h-4 w-4 text-[#9a7547]" /> Interactive Cytoscape.js Multi-Hop Transaction Graph
             </h2>
             {graphData && (
-              <span className="text-xs font-mono text-slate-500">
-                Nodes: <span className="text-blue-600 font-bold">{graphData.stats.total_nodes}</span> | Edges: <span className="text-cyan-600 font-bold">{graphData.stats.total_edges}</span> | Volume: <span className="text-emerald-600 font-bold">${graphData.stats.total_volume_usd.toLocaleString()}</span>
+              <span className="text-xs text-slate-500 font-bold">
+                Nodes: <span className="text-[#9a7547]">{graphData.stats.total_nodes}</span> | Edges: <span className="text-[#9a7547]">{graphData.stats.total_edges}</span> | Volume: <span className="text-[#9a7547]">${graphData.stats.total_volume_usd.toLocaleString()}</span>
               </span>
             )}
           </div>
 
           {loadingGraph ? (
-            <div className="h-[520px] rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center text-xs font-mono text-slate-500 animate-pulse">
-              <RefreshCw className="h-5 w-5 animate-spin mr-2" /> Rendering Cytoscape.js Graph Canvas...
+            <div className="h-[520px] rounded-2xl glass-card ai-card-bg flex items-center justify-center text-xs text-slate-500 animate-pulse !border-[#e7ebf2]">
+              <RefreshCw className="h-5 w-5 animate-spin mr-2 text-[#9a7547]" /> Rendering Cytoscape.js Graph Canvas...
             </div>
           ) : graphData ? (
-            <CytoscapeGraph nodes={graphData.nodes} edges={graphData.edges} suspectAddress={suspectAddress} />
+            <div className="glass-card ai-card-bg overflow-hidden !border-[#e7ebf2]">
+              <CytoscapeGraph nodes={graphData.nodes} edges={graphData.edges} suspectAddress={suspectAddress} />
+            </div>
           ) : null}
         </div>
       )}
@@ -128,8 +129,8 @@ export const InvestigationView: React.FC = () => {
       {activeTab === 'attribution' && (
         <div className="space-y-4">
           {loadingAttr ? (
-            <div className="p-8 rounded-xl bg-white border border-slate-200 text-xs font-mono text-slate-500 animate-pulse flex items-center justify-center">
-              <RefreshCw className="h-4 w-4 animate-spin mr-2" /> Computing Evidence-Strength Scores...
+            <div className="p-8 rounded-2xl glass-card ai-card-bg text-xs text-slate-500 animate-pulse flex items-center justify-center !border-[#e7ebf2]">
+              <RefreshCw className="h-4 w-4 animate-spin mr-2 text-[#9a7547]" /> Computing Evidence-Strength Scores...
             </div>
           ) : attrData ? (
             <AttributionPanel attributions={attrData.attributions} />
@@ -140,49 +141,49 @@ export const InvestigationView: React.FC = () => {
       {/* Tab 3: Risk & Typology Analysis */}
       {activeTab === 'risk' && (
         <div className="space-y-4">
-          <h2 className="text-sm font-semibold text-slate-800 tracking-wide uppercase font-mono flex items-center gap-2">
-            <AlertTriangle className="h-4 w-4 text-rose-600" /> Automated Risk & Laundering Typologies
+          <h2 className="text-sm font-bold text-slate-800 tracking-wide uppercase flex items-center gap-2">
+            <AlertTriangle className="h-4 w-4 text-[#9a7547]" /> Automated Risk &amp; Laundering Typologies
           </h2>
 
           {loadingRisk ? (
-            <div className="p-8 rounded-xl bg-white border border-slate-200 text-xs font-mono text-slate-500 animate-pulse flex items-center justify-center">
-              <RefreshCw className="h-4 w-4 animate-spin mr-2" /> Evaluating Typology Indicators...
+            <div className="p-8 rounded-2xl glass-card ai-card-bg text-xs text-slate-500 animate-pulse flex items-center justify-center !border-[#e7ebf2]">
+              <RefreshCw className="h-4 w-4 animate-spin mr-2 text-[#9a7547]" /> Evaluating Typology Indicators...
             </div>
           ) : riskData ? (
             <div className="space-y-4">
-              <div className="rounded-xl bg-white border border-slate-200 p-6 flex items-center justify-between shadow-sm">
+              <div className="glass-card ai-card-bg p-6 flex items-center justify-between !border-[#e7ebf2]">
                 <div>
-                  <span className="text-xs font-mono text-slate-500 uppercase">Overall Risk Level</span>
-                  <div className="text-2xl font-bold text-rose-600 font-mono mt-0.5">{riskData.risk_level}</div>
+                  <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Overall Risk Level</span>
+                  <div className="text-2xl font-black text-[#9a7547] mt-0.5">{riskData.risk_level}</div>
                 </div>
                 <div className="text-right">
-                  <div className="text-3xl font-bold font-mono text-rose-600">{riskData.risk_score} / 100</div>
-                  <div className="text-[10px] text-slate-500 font-mono">Risk Index</div>
+                  <div className="text-3xl font-black text-[#9a7547]">{riskData.risk_score} / 100</div>
+                  <div className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">Risk Index</div>
                 </div>
               </div>
 
               {/* Indicators List */}
               <div className="space-y-3">
                 {riskData.risk_indicators.map((ind, idx) => (
-                  <div key={idx} className="p-4 rounded-xl bg-white border border-slate-200 shadow-sm space-y-2">
+                  <div key={idx} className="p-4 rounded-xl glass-card ai-card-bg space-y-2 !border-[#e7ebf2]">
                     <div className="flex items-center justify-between">
-                      <span className="font-mono text-sm font-bold text-rose-600">{ind.type}</span>
-                      <span className="px-2 py-0.5 rounded bg-rose-50 text-rose-600 border border-rose-200 text-xs font-mono font-medium">
+                      <span className="text-sm font-bold text-slate-900">{ind.type}</span>
+                      <span className="px-2.5 py-0.5 rounded-full bg-[#fbf7f1] text-[#9a7547] border border-[#9a7547]/30 text-[10px] font-bold">
                         {ind.severity} SEVERITY
                       </span>
                     </div>
-                    <p className="text-xs text-slate-700">{ind.description}</p>
-                    <div className="text-[10px] font-mono text-slate-500">
-                      Evidence Hashes/Nodes: <span className="text-slate-800">{ind.evidence.join(', ')}</span>
+                    <p className="text-xs text-slate-700 font-medium">{ind.description}</p>
+                    <div className="text-[10px] text-slate-500 font-mono">
+                      Evidence Hashes/Nodes: <span className="text-slate-800 font-bold">{ind.evidence.join(', ')}</span>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Legal Limitations Disclaimer */}
-              <div className="rounded-xl bg-amber-50 border border-amber-200 p-4 space-y-1 text-xs text-amber-900">
-                <div className="font-bold text-amber-800 font-mono uppercase">Operational Analysis Limitations & Legal Disclaimers:</div>
-                <ul className="list-disc list-inside space-y-0.5 text-[11px] text-amber-800/90">
+              <div className="rounded-xl bg-[#fbf7f1] border border-[#9a7547]/25 p-4 space-y-1 text-xs text-slate-800">
+                <div className="font-bold text-[#9a7547] uppercase text-[11px]">Operational Analysis Limitations &amp; Legal Disclaimers:</div>
+                <ul className="list-disc list-inside space-y-0.5 text-[11px] text-slate-600 font-medium">
                   {riskData.limitations.map((lim, lIdx) => (
                     <li key={lIdx}>{lim}</li>
                   ))}
@@ -216,9 +217,9 @@ export const InvestigationView: React.FC = () => {
 
       {/* Tab 7: Evidence & Audit Provenance */}
       {activeTab === 'evidence' && (
-        <div className="rounded-xl bg-white border border-slate-200 p-6 space-y-4 shadow-sm">
-          <h2 className="text-sm font-semibold text-slate-800 tracking-wide uppercase font-mono flex items-center gap-2 border-b border-slate-100 pb-3">
-            <FileText className="h-4 w-4 text-blue-600" /> Lawful Evidence Chain-of-Custody & Audit Provenance
+        <div className="glass-card ai-card-bg p-6 space-y-4 !border-[#e7ebf2]">
+          <h2 className="text-sm font-bold text-slate-800 tracking-wide uppercase flex items-center gap-2 border-b border-slate-100 pb-3">
+            <FileText className="h-4 w-4 text-[#9a7547]" /> Lawful Evidence Chain-of-Custody &amp; Audit Provenance
           </h2>
 
           <div className="space-y-3">
@@ -227,12 +228,12 @@ export const InvestigationView: React.FC = () => {
               { action: 'GRAPH_INGESTION_COMPLETED', user: 'TRACE-X Core Engine', time: '2026-10-09 03:45:05 UTC', details: 'Ingested 4 nodes and 3 edges across 3 hops' },
               { action: 'POAE_SCORE_COMPUTED', user: 'PoAE Engine v1.0', time: '2026-10-09 03:45:06 UTC', details: 'Attribution evaluated for Binance International (89.6% score)' },
             ].map((log, idx) => (
-              <div key={idx} className="p-3.5 rounded-lg bg-slate-50 border border-slate-200 flex items-start justify-between text-xs">
+              <div key={idx} className="p-3.5 rounded-xl bg-slate-50 border border-[#e7ebf2] flex items-start justify-between text-xs">
                 <div>
-                  <span className="font-mono font-bold text-blue-600">{log.action}</span>
-                  <div className="text-slate-700 mt-0.5">{log.details}</div>
+                  <span className="font-bold text-[#9a7547]">{log.action}</span>
+                  <div className="text-slate-700 mt-0.5 font-medium">{log.details}</div>
                 </div>
-                <div className="text-right font-mono text-[10px] text-slate-500">
+                <div className="text-right text-[11px] text-slate-500 font-medium">
                   <div>{log.user}</div>
                   <div>{log.time}</div>
                 </div>

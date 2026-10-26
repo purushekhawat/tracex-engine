@@ -1,5 +1,5 @@
 // TRACE-X Neo4j Cypher Schema & Constraints Definition
-// SIH 26182 - Cross-Chain Graph Intelligence Engine
+// Cross-Chain Graph Intelligence Engine
 
 // Node Uniqueness Constraints
 CREATE CONSTRAINT wallet_address_unique IF NOT EXISTS

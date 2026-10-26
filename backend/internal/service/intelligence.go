@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/sih26182/tracex-backend/internal/model"
+	"github.com/tracex/tracex-backend/internal/model"
 )
 
 type IntelligenceService struct {

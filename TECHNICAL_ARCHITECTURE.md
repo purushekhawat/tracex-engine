@@ -1,5 +1,5 @@
 # TRACE-X Technical Architecture Document
-**SIH 26182: Explainable Cross-Chain VASP Attribution & Lawful Investigation Engine**
+**Explainable Cross-Chain VASP Attribution & Lawful Investigation Engine**
 
 ---
 

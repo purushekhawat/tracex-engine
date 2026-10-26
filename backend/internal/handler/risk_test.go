@@ -6,7 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/sih26182/tracex-backend/internal/service"
+	"github.com/tracex/tracex-backend/internal/service"
 )
 
 func TestGetInvestigationRisk(t *testing.T) {

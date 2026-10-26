@@ -1,5 +1,5 @@
 -- TRACE-X PostgreSQL Migration 000001 UP
--- SIH 26182 - Explainable Cross-Chain VASP Attribution & Investigation Engine Schema
+-- Explainable Cross-Chain VASP Attribution & Investigation Engine Schema
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 

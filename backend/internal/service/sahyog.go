@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/sih26182/tracex-backend/pkg/sahyog"
+	"github.com/tracex/tracex-backend/pkg/sahyog"
 )
 
 type SahyogService struct {

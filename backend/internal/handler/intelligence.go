@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/sih26182/tracex-backend/internal/model"
-	"github.com/sih26182/tracex-backend/internal/service"
+	"github.com/tracex/tracex-backend/internal/model"
+	"github.com/tracex/tracex-backend/internal/service"
 )
 
 type IntelligenceHandler struct {

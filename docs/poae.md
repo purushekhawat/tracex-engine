@@ -1,7 +1,7 @@
 # TRACE-X Proof-of-Attribution Engine (PoAE) Methodology
 ## Explainable Cross-Chain VASP Attribution Scoring Framework
 
-> **SIH 26182 — Operational Intelligence Specification**  
+> **Operational Intelligence Specification**  
 > **Target Audience**: Law Enforcement Agencies (LEAs), Cyber Crime Investigators, Forensic Analysts, and Judicial Auditors.
 
 ---

@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/sih26182/tracex-backend/internal/model"
+	"github.com/tracex/tracex-backend/internal/model"
 )
 
 func TestPoAEScoringStrongAssociation(t *testing.T) {

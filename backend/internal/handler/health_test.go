@@ -6,8 +6,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/sih26182/tracex-backend/internal/config"
-	"github.com/sih26182/tracex-backend/internal/service"
+	"github.com/tracex/tracex-backend/internal/config"
+	"github.com/tracex/tracex-backend/internal/service"
 )
 
 func TestHealthHandler(t *testing.T) {
